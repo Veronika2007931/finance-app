@@ -4,9 +4,7 @@ export const AppNav= ()=>{
     <div>
        <NavLink to="/registration"> Registration </NavLink>
       <NavLink to="/login"> Login </NavLink>
-      <li></li>
-      <li></li>
-      {/* видали лі потім */}
+     
 
     </div>
   )
