@@ -1,40 +1,45 @@
+import { warning, defaultModules } from '@pnotify/core';
+import '@pnotify/core/dist/PNotify.css';
+import * as PNotifyMobile from '@pnotify/mobile';
+import '@pnotify/mobile/dist/PNotifyMobile.css';
 import { HeaderText, MainText, SecondMainText, Form, 
-GoogleBtn, DefText, Input, LogInBtn, RegisterBtn,
-Backdrop} from "./Login.styled"
+GoogleBtn, DefText, Input, LogInBtn,
+Backdrop, Modal, GoogleText, RegisterBtn } from "./Login.styled"
 
-function Login({closeModal}){
+defaultModules.set(PNotifyMobile, {});
 
-    const handleCloseOnEsc = (e) => {
-        if(e.code === 'Escape'){
-            closeModal()
-            window.removeEventListener('keydown', handleCloseOnEsc)
+export function Login(){
+
+    warning({
+        text: 'Заповніть усі поля перед тим, як реєструватись.'
+    })
+    
+
+    const handleInpBtn = (e) => {
+        e.preventDefault()
+        if(e.currentTarget.elements.name.value === ''){
+            
         }
     }
 
-    window.addEventListener('keydown', handleCloseOnEsc)
-    const handleClosing = (e) => {
-        e.target === e.currentTarget && closeModal()
-        window.removeEventListener('keydown', handleCloseOnEsc)
-    }
-
     return(
-        <Backdrop onClick={handleClosing}>
+        <Backdrop>
           <HeaderText>INVESTIQ</HeaderText>
           <MainText>InvestIQ</MainText>
           <SecondMainText>SMART FINANCE</SecondMainText>
-          <container>
-            <Form>
-            <p>Ви можете авторизуватися за допомогою акаунта Google.</p>
+          <Modal>
+            <Form noValidate>
+            <GoogleText>Ви можете авторизуватися за допомогою акаунта Google.</GoogleText>
             <GoogleBtn type="submit">Google</GoogleBtn>
-            <p>Або увійти за допомогою ел. пошти та праолю після реєстрації.</p>
+            <GoogleText>Або увійти за допомогою ел. пошти та паролю після реєстрації.</GoogleText>
             <DefText>Електронна пошта:</DefText> 
-            <input type="text" name="email" placeholder="your@email.com" />
+            <Input type="text" name="email" placeholder="your@email.com" />
             <DefText>Пароль:</DefText>
             <Input type="text" name="password" placeholder="password"/>
-            <LogInBtn type="submit" onSubmit={handleBtnInp}>Увійти</LogInBtn>
-            <RegisterBtn type="submit">Реєстрація</RegisterBtn>
+            <LogInBtn type="submit" onSubmit={handleInpBtn}>Увійти</LogInBtn>
+            <RegisterBtn>Реєстрація</RegisterBtn>
           </Form>
-          </container>
+          </Modal>
         </Backdrop>
     )
 }

@@ -1,7 +1,7 @@
 import { ExitBtn, UserNameText } from "./Header.styled"
-import { HeaderText } from "./Login.styled"
+import { HeaderText } from "./Login/Login.styled"
 
-function Header(){
+export function Header(){
   return(
       <div>
       <HeaderText>INVESTIQ</HeaderText>
