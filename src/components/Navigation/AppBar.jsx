@@ -1,17 +1,19 @@
-import {Navigation} from"./"
-// import { useSelector } from "react-redux"
-// import { selectIsLogged } from "../redux/selectors" 
 
-// export const AppBar= ()=>{
+import { UserMenu } from "components/UserMenu/UserMenu"
+import {Header} from "../Header/Header"
+import { useState } from "react"
+
+export const AppBar= ()=>{
 //   const isLoggedIn = useSelector(selectIsLogged)
-// return(
+   const [isLoggedIn, setIsLoggedIn] = useState(true)
+return(
    
-//   <header>
-//     <Navigation/>
-//     {isLoggedIn ? <UserMenu/> : <AppNav/>}
+  <header>
+    <Header/>
+    {isLoggedIn && <UserMenu/> }
      
    
  
-//   </header>
-//     )
-// }  
+  </header>
+    )
+}  

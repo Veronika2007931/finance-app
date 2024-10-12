@@ -1,16 +1,17 @@
 import { NavLink, Outlet } from "react-router-dom"
+import {Link} from "./Layout.styled"
 
 export const Layout=()=>{
     return(
 <>
 <div>
     <ul>
-        <li>
+        <Link>
             <NavLink to="/">Homepage</NavLink>
-        </li>
-        <li>
+        </Link>
+        <Link>
             <NavLink to="/user-profile">Особистий кабінет</NavLink>
-        </li>
+        </Link>
     </ul>
  </div>
  <Outlet/>
