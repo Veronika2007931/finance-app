@@ -1,3 +1,4 @@
+// import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
 export const HeaderText = styled.h3`
@@ -16,36 +17,25 @@ export const HeaderText = styled.h3`
 
 export const MainText = styled.h1`
    color: #000000;
-   font-family: 'Roboto';
    font-size: 102px;
-   font-weight: 900;
-   line-height: 119.53px;
-   text-align: left;
-   size: 102px;
 
    width: 385px;
    height: 120px;
-   top: 364px;
-   left: 230px;
-   gap: 0px;
-   opacity: 0px;
+   margin-left: 270px;
+   margin-top: 200px;
+   margin-bottom: 0px;
 `
 
 export const SecondMainText = styled.h3`
     color: #52555F;
-    font-family: 'Roboto';
     font-size: 16px;
     font-weight: 700;
     line-height: 18.75px;
-    letter-spacing: 0.18em;
     text-align: left;
 
     width: 159px;
     height: 19px;
-    top: 484px;
-    left: 302px;
-    gap: 0px;
-    opacity: 0px;
+    margin-left: 400px;
 `
 
 export const Form = styled.form`
@@ -60,12 +50,15 @@ export const Form = styled.form`
 `
 
 export const GoogleBtn = styled.button`
-  background-color: #F6F7FB;
+  background-color: #e0e0e0;
   border: none;
   border-radius: 10px;
   margin-top: 15px;
   margin-bottom: 15px;
   box-shadow: 5px, 5px, 0px, #aab2c533;
+  padding: 10px;
+  margin-left: 10px;
+  margin-left: 175px;
 `
 
 export const DefText = styled.p`
@@ -75,8 +68,11 @@ export const DefText = styled.p`
 `
 
 export const Input = styled.input`
-    background-color: #F6F7FB;
+    background-color: #e8e8e8;
     border-radius: 10px;
+    border: none;
+    padding: 5px;
+    width: 220px;
 `
 
 export const LogInBtn = styled.button`
@@ -84,13 +80,19 @@ export const LogInBtn = styled.button`
     border-radius: 16px;
     background-color: #FF6B08;
     box-shadow: 5px, 5px, 0px, #FF6B0859;
+    padding: 10px;
+    width: 90px;
+    color: white;
 `
 
 export const RegisterBtn = styled.button`
-  background-color: #F5F6FB;
+  background-color: #e4e4e4;
   border: none;
   border-radius: 16px;
   box-shadow: 5px, 5px, 0px, #aab2c533;
+  padding: 10px;
+  width: 110px;
+  color: grey;
 `
 
 export const Backdrop = styled.div`
@@ -101,5 +103,25 @@ export const Backdrop = styled.div`
     height: 100%;
     background: #0000003a;
     backdrop-filter: blur(4px);
+    background-color: #efefef;
     z-index: 10;
+`
+
+export const Modal = styled.div`
+  background-color: white;
+  width: 436px;
+  height: 400px;
+  top: 173px;
+  left: 734px;
+  gap: 0px;
+  opacity: 0px;
+  margin-left: 100px;
+
+  padding: 10px;
+  border-radius: 16px;
+  position: absolute;
+`
+
+export const GoogleText = styled.p`
+  color: #52555F;
 `
