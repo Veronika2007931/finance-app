@@ -1,4 +1,4 @@
-import { warning, defaultModules } from '@pnotify/core';
+import { error, defaultModules } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 import * as PNotifyMobile from '@pnotify/mobile';
 import '@pnotify/mobile/dist/PNotifyMobile.css';
@@ -11,15 +11,15 @@ import { Form, GoogleText, GoogleBtn, DefText, Input, LogInBtn, RegisterBtn } fr
 defaultModules.set(PNotifyMobile, {});
 
 export const App = () => {
-  
-  warning({
+
+  error({
     text: 'Заповніть усі поля перед тим, як реєструватись.'
   })
 
 const handleInpBtn = (e) => {
   e.preventDefault()
   if(e.currentTarget.elements.name.value === ''){
-      warning()
+    
   }
 }
   return (
