@@ -1,0 +1,47 @@
+.schedule {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 30px;
+}
+
+.container {
+    width: 95%;
+    max-width: 1060px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 10px 60px 0px #AAB2C533;
+}
+
+.container .wrapper_canvas {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .container .wrapper_canvas {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .container {
+        border-radius: 0px;
+        box-shadow: 0px 0px 0px 0px #ffffff;
+        height: 700px;
+    }
+    
+    .container .wrapper_canvas {
+        width: 100%;
+        height: 100%;
+    }
+}

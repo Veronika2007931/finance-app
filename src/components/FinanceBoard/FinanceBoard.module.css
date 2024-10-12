@@ -1,0 +1,43 @@
+
+.finances {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 30px;
+}
+
+.container {
+    width: 95%;
+    max-width: 1060px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 10px 60px 0px #AAB2C533;
+    overflow: hidden;
+}
+
+.title {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    h3 {
+        font-size: 30px;
+    }
+    svg {
+        position: absolute;
+    }
+    .prev {
+        left: -40px;
+    }
+    .next {
+        right: -40px;
+    }
+
+}

@@ -3,8 +3,8 @@ import { ToggleList } from "./FinanceToggle.styled"
 export const FinanceToggle = () => {
     return(
         <ToggleList>
-            <li><button type="button">Витрати</button></li>
-            <li><button type="button">Дохід</button></li>
+            <li><a href="/">Витрати</a></li>
+            <li><a href="/">Дохід</a></li>
         </ToggleList>
     )
 }
