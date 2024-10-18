@@ -1,34 +1,50 @@
-import { error, defaultModules } from '@pnotify/core';
+// import { Notification } from 'react-pnotify';
+import { info } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
-import * as PNotifyMobile from '@pnotify/mobile';
-import '@pnotify/mobile/dist/PNotifyMobile.css';
+import '@pnotify/bootstrap4/dist/PNotifyBootstrap4.css';
 import { FinanceBlock } from "./FinanceBlock/FinanceBlock";
 
 import { Login } from './Header/Login/Login';
 import { Header } from './Header/Header'
 import { Modal } from "./Header/Login/Login.styled";
 import { Form, GoogleText, GoogleBtn, DefText, Input, LogInBtn, RegisterBtn } from "./Header/Login/Login.styled";
-defaultModules.set(PNotifyMobile, {});
-import { Route, Routes } from "react-router-dom";
-import { Layout } from "./Navigation/Layout";
-import {HomePage} from "../Pages/HomePage"
-import {RegPage} from "../Pages/RegPage"
-import {LoginPage} from "../Pages/LoginPage"
-import {Incomes} from "../Pages/Incomes"
-import {Spendings} from "../Pages/Spendings"
-import {FinanceFlow} from "../Pages/FinanceFlow"
+// defaultModules.set(PNotifyMobile, {});
+// import { Route, Routes } from "react-router-dom";
+// import { Layout } from "./Navigation/Layout";
+// import {HomePage} from "../Pages/HomePage"
+// import {RegPage} from "../Pages/RegPage"
+// import {LoginPage} from "../Pages/LoginPage"
+// import {Incomes} from "../Pages/Incomes"
+// import {Spendings} from "../Pages/Spendings"
+// import {FinanceFlow} from "../Pages/FinanceFlow"
 
 
 export const App = () => {
 
-  error({
-    text: 'Заповніть усі поля перед тим, як реєструватись.'
-  })
+  // <Notification
+  //     type='notice'
+  //     title='Notice example - Permanent'
+  //     text='Helpful notice content goes here'
+  //     delay={2000}
+  //     shadow={false}
+  //     hide={false}
+  //     nonblock={true}
+  //     desktop={true}
+  // />
+
+  const showNotification = () => {
+    info({
+     text: 'Це повідомлення від PNotify!',
+     type: 'info', // тип повідомлення (може бути 'notice', 'info', 'success', 'error')
+     styling: 'bootstrap4', // використання Bootstrap 4 стилів
+     delay: 2000, // час відображення (мс)
+   });
+ };
 
 const handleInpBtn = (e) => {
   e.preventDefault()
   if(e.currentTarget.elements.name.value === ''){
-    
+    showNotification()
   }
 }
   return (
@@ -51,7 +67,7 @@ const handleInpBtn = (e) => {
       </Modal>
       <FinanceBlock/> 
       {/* <FinanceBlock/>  */}
-      <Layout/>
+      {/* <Layout/>
       <Routes>
         <Route path="/"  element={<HomePage/>}/>
         <Route path="/registration" element={<RegPage/>}/>
@@ -59,7 +75,7 @@ const handleInpBtn = (e) => {
         <Route path="/incomes" element={<Incomes/>}/>
         <Route path="/spendings" element={<Spendings/>}/>
         <Route path="/finance-flows" element={<FinanceFlow/>}/>
-      </Routes>
+      </Routes> */}
       
       
       
