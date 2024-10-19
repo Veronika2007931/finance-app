@@ -1,12 +1,12 @@
-import { ExitBtn, UserNameText } from "./UserMenu.styled"
+import { ExitBtn, UserNameText, UMDiv } from "./UserMenu.styled"
 
 
 export function UserMenu(){
     return(
-        <div>
+        <UMDiv>
     
         <UserNameText>User name </UserNameText>
         <ExitBtn>Вийти</ExitBtn>
-     </div>
+     </UMDiv>
   )
   }

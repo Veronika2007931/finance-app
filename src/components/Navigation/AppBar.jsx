@@ -3,6 +3,7 @@ import { UserMenu } from "components/UserMenu/UserMenu"
 import { HeaderText } from "../Header/Login/Login.styled"
 import { useState } from "react"
 import { Outlet } from "react-router-dom"
+import { Header } from "./AppBar.styled"
 
 export const AppBar= ()=>{
   // const isLoggedIn = useSelector(selectIsLogged)
@@ -10,11 +11,12 @@ export const AppBar= ()=>{
 return(
    
  <>
-  <header>
+ 
+  <Header>
   <HeaderText>INVESTIQ</HeaderText>
     {isLoggedIn && <UserMenu/> }
      
-</header>
+</Header>
   <Outlet/>
 </>
     )
