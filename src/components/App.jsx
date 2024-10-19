@@ -10,51 +10,21 @@
 // import { Form, GoogleText, GoogleBtn, DefText, Input, LogInBtn, RegisterBtn } from "./Header/Login/Login.styled";
 // defaultModules.set(PNotifyMobile, {});
 import { Route, Routes } from "react-router-dom";
-import { Layout } from "./Navigation/Layout";
 import {HomePage} from "../Pages/HomePage"
 import {RegPage} from "../Pages/RegPage"
 import {LoginPage} from "../Pages/LoginPage"
 import {FinanceFlow} from "../Pages/FinanceFlow"
 import { IncomesPage } from "Pages/IncomesPage";
 import { SpendingsPage } from "Pages/SpendingsPage";
-
+import { AppBar } from './Navigation/AppBar';
 
 export const App = () => {
-
-//   error({
-//     text: 'Заповніть усі поля перед тим, як реєструватись.'
-//   })
-
-// const handleInpBtn = (e) => {
-//   e.preventDefault()
-//   if(e.currentTarget.elements.name.value === ''){
-    
-//   }
-// }
-  return (
+ return (
     <div>
-
-      {/* <Login/>
-      <Header/>
-      <Modal>
-      <Form noValidate>
-            <GoogleText>Ви можете авторизуватися за допомогою акаунта Google.</GoogleText>
-            <GoogleBtn type="submit">Google</GoogleBtn>
-            <GoogleText>Або увійти за допомогою ел. пошти та паролю після реєстрації.</GoogleText>
-            <DefText>Електронна пошта:</DefText> 
-            <Input type="text" name="email" placeholder="your@email.com" />
-            <DefText>Пароль:</DefText>
-            <Input type="text" name="password" placeholder="password"/>
-            <LogInBtn type="submit" onSubmit={handleInpBtn}>Увійти</LogInBtn>
-            <RegisterBtn>Реєстрація</RegisterBtn>
-          </Form>
-      </Modal>
-      <FinanceBlock/>  */}
-      {/* <FinanceBlock/>  */}
-      <Layout/>
+         <AppBar/>
       <Routes>
         <Route path="/"  element={<HomePage/>}/>
-        <Route path="/registration" element={<RegPage/>}/>
+        <Route path="/registration" index element={<RegPage/>}/>
         <Route path="/loginization" element={<LoginPage/>}/>
         <Route path="/spendings" element={<SpendingsPage/>}/>
         <Route path="/incomes" element={<IncomesPage/>}/>
