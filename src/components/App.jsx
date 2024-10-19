@@ -60,7 +60,7 @@ const handleInpBtn = (e) => {
         <Route path="/spendings" element={<Spendings/>}/>
         <Route path="/finance-flows" element={<FinanceFlow/>}/>
       </Routes>
-      
+      <form>form</form>
       
       
 
