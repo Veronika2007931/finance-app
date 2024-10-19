@@ -1,17 +1,21 @@
-import {Navigation} from"./"
-// import { useSelector } from "react-redux"
-// import { selectIsLogged } from "../redux/selectors" 
 
-// export const AppBar= ()=>{
-//   const isLoggedIn = useSelector(selectIsLogged)
-// return(
+import { UserMenu } from "components/UserMenu/UserMenu"
+import { HeaderText } from "../Header/Login/Login.styled"
+import { useState } from "react"
+import { Outlet } from "react-router-dom"
+
+export const AppBar= ()=>{
+  // const isLoggedIn = useSelector(selectIsLogged)
+   const [isLoggedIn, setIsLoggedIn] = useState(true)
+return(
    
-//   <header>
-//     <Navigation/>
-//     {isLoggedIn ? <UserMenu/> : <AppNav/>}
+ <>
+  <header>
+  <HeaderText>INVESTIQ</HeaderText>
+    {isLoggedIn && <UserMenu/> }
      
-   
- 
-//   </header>
-//     )
-// }  
+</header>
+  <Outlet/>
+</>
+    )
+}  
