@@ -1,9 +1,5 @@
 
-import { ExitBtn, UserNameText } from "./Header.styled"
-import { HeaderText } from "./Login/Login.styled"
-
-
-
+// import { ExitBtn, UserNameText } from "./Header.styled"
 import { HeaderText } from "./Login/Login.styled"
 
 
