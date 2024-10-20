@@ -31,6 +31,8 @@
         font-size: 30px;
     }
     svg {
+        width: 40px;
+        height: 40px;
         position: absolute;
     }
     .prev {

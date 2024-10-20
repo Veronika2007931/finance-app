@@ -1,0 +1,33 @@
+.date_range_slider {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.date_range_slider svg {
+    width: 20px;
+    height: 20px;
+    color: #FF751D;
+}
+
+.date_range {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.date_range h3, .date_range h4 {
+    margin: 0px;
+}
+
+.current_range {
+    top: -20px;
+    position: absolute;
+    color: #52555FB2;
+    cursor: pointer;
+    font-size: 14px;
+}
