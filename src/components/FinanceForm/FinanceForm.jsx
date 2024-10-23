@@ -1,4 +1,4 @@
-import { useState } from "react"
+// import { useState } from "react"
 import { ClearBtn, DateInp, FinForm, SubBtn } from "./FinanceForm.styled"
 
 export const FinanceForm = () => {
