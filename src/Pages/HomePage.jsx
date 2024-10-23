@@ -4,6 +4,7 @@ import { AppBar } from "components/Navigation/AppBar";
 
 export function HomePage(){
     return(
-        <AppBar/>
+        <h1>HomePage</h1>
+        
     )
     }

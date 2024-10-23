@@ -3,15 +3,13 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { Bar } from "react-chartjs-2";
 import { CategoryScale } from "chart.js";
 import { useState, useEffect } from "react";
-
 import styles from './Schedule.module.css'
 
 Chart.register(CategoryScale, ChartDataLabels );
 
 
-const Data = [{price: 6300, item: "Products"}, {price: 5900, item: "Fish"}, {price: 4000, item: "Meat"}, {price: 3200, item: "Vegetables"}, {price: 2900, item: "Fruits"}, {price: 300, item: "Spices"}]
 
-export const Schedule = () => {
+export const Schedule = ({data}) => {
   const [indexAxsis, setIndexAxsis] = useState('x')
     
   useEffect(() => {
@@ -21,11 +19,11 @@ export const Schedule = () => {
   }, [])
     
   const [chartData, setChartData] = useState({
-      labels: Data.map((data) => data.item),
+      labels: data.map((financeFlow) => financeFlow.desciption),
       datasets: [
         {
-          label: Data.map((data) => data.item),
-          data: Data.map((data) => data.price),
+          label: data.map((financeFlow) => financeFlow.item),
+          data: data.map((financeFlow) => financeFlow.sum),
           backgroundColor: [
             "#FF751D",
             "#FFDAC0",

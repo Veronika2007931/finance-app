@@ -32,3 +32,9 @@ export const ExitBtn = styled.button`
   gap: 0px;
   opacity: 0px;
 `
+
+export const UMDiv = styled.div`
+   display: flex;
+   /* justify-content: center; */
+   align-items: center;
+`
