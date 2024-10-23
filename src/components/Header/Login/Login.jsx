@@ -30,7 +30,7 @@ export function Login(){
 
     const handleInpBtn = (e) => {
         e.preventDefault()
-        if(e.currentTarget.elements.name.value === ''){
+        if(e.currentTarget.elements.email.value === ''){
            showNotification()
         }
     }
@@ -41,7 +41,7 @@ export function Login(){
           <MainText>InvestIQ</MainText>
           <SecondMainText>SMART FINANCE</SecondMainText>
           <Modal>
-            <Form noValidate>
+            <Form noValidate onSubmit={handleInpBtn}>
             <GoogleText>Ви можете авторизуватися за допомогою акаунта Google.</GoogleText>
             <GoogleBtn type="submit">Google</GoogleBtn>
             <GoogleText>Або увійти за допомогою ел. пошти та паролю після реєстрації.</GoogleText>
@@ -49,7 +49,7 @@ export function Login(){
             <Input type="text" name="email" placeholder="your@email.com" />
             <DefText>Пароль:</DefText>
             <Input type="text" name="password" placeholder="password"/>
-            <LogInBtn type="submit" onSubmit={handleInpBtn}>Увійти</LogInBtn>
+            <LogInBtn type="submit">Увійти</LogInBtn>
             <RegisterBtn>Реєстрація</RegisterBtn>
           </Form>
           </Modal>

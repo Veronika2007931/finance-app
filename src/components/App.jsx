@@ -26,8 +26,13 @@ export const App = () => {
 
 const handleInpBtn = (e) => {
   e.preventDefault()
+<<<<<<< Updated upstream
   if(e.currentTarget.elements.name.value === ''){
     
+=======
+  if(e.currentTarget.elements.email.value === ''){
+    showNotification()
+>>>>>>> Stashed changes
   }
 }
   return (
@@ -36,7 +41,7 @@ const handleInpBtn = (e) => {
       <Login/>
       <Header/>
       <Modal>
-      <Form noValidate>
+      <Form noValidate onSubmit={handleInpBtn}>
             <GoogleText>Ви можете авторизуватися за допомогою акаунта Google.</GoogleText>
             <GoogleBtn type="submit">Google</GoogleBtn>
             <GoogleText>Або увійти за допомогою ел. пошти та паролю після реєстрації.</GoogleText>
@@ -44,7 +49,7 @@ const handleInpBtn = (e) => {
             <Input type="text" name="email" placeholder="your@email.com" />
             <DefText>Пароль:</DefText>
             <Input type="text" name="password" placeholder="password"/>
-            <LogInBtn type="submit" onSubmit={handleInpBtn}>Увійти</LogInBtn>
+            <LogInBtn type="submit">Увійти</LogInBtn>
             <RegisterBtn>Реєстрація</RegisterBtn>
           </Form>
       </Modal>
