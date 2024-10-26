@@ -4,6 +4,7 @@ import { FinanceToggle } from "components/FinanceToggle/FinanceToggle"
 import { useSelector } from "react-redux"
 import { selectIncomes } from "../../redux/selectors"
 import { addIncomes } from "../../redux/userSlice"
+import { deleteIncomes } from "../../redux/userSlice"
 
 export const Incomes = () => {
     const financeList = useSelector(selectIncomes) 
@@ -12,7 +13,7 @@ export const Incomes = () => {
             <FinanceToggle/>
             <div>
                 <FinanceForm isSpendings={false} finAdd={addIncomes}/>
-                <FinanceHistory finanseList={financeList}/>
+                <FinanceHistory isSpendings={false} finanseList={financeList} delfunc={deleteIncomes}/>
                 {/* Тут має бути елемент зведення */}
             </div>
         </section>

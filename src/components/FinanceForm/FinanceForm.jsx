@@ -1,19 +1,21 @@
 import { useDispatch } from "react-redux"
 import { ClearBtn, DateInp, FinForm, SubBtn } from "./FinanceForm.styled"
+import { nanoid } from "nanoid"
 
 export const FinanceForm = ({isSpendings, finAdd}) => {
     const dispatch = useDispatch()
     const handleAdd = (e) => {
         e.preventDefault()
-        const form = e.target.elements
+        const form = e.currentTarget
         const finItem = {
-            date: form.date.value,
-            desciption:form.desciption.value,
-            category:form.category.value,
-            sum:form.sum.value
+            date: form.elements.date.value,
+            description:form.elements.description.value,
+            category:form.elements.category.value,
+            sum:form.elements.sum.value,
+            id:nanoid()
         }
         dispatch(finAdd(finItem))
-
+        form.reset()
     }
     return(
         <FinForm onSubmit={handleAdd}>
