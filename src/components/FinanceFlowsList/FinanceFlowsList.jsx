@@ -1,14 +1,14 @@
 import { useDispatch } from 'react-redux'
-import { setDateRange } from '../../redux/filtersSlice'
+import { setCategory } from '../../redux/filtersSlice'
 import styles from './FinanceFlowsList.module.css'
 
 export const FinanceFlowsList = ({data}) => {
     const dispatch = useDispatch()
 
     const handleChangeCategory = (category) => {
-        dispatch(setDateRange(category))
+        dispatch(setCategory(category))
     }
-
+    
     return (
         <ul className={styles.list}>
             {data.map(({category}) => (
