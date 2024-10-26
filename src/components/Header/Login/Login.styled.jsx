@@ -6,6 +6,7 @@ export const HeaderText = styled.h3`
   size: 16px;
   font-family: 'Roboto';
   line-height: 18.75px;
+  margin: 10px;
 
   width: 77px;
   height: 19px;
