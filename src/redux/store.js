@@ -1,15 +1,25 @@
-import { configureStore } from '@reduxjs/toolkit';
-import authReducer from '../../src/redux/authSlice';
-import userSlice from '../../src/redux/userSlice';
-import filtersReducer from '../../src/redux/filtersSlice';
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { filtersReducers } from './filtersSlice'
+import { authReducers } from './authSlice'
+import { financesReducers } from './financesSlice';
 
+const reducers = combineReducers({
+    auth: authReducers,
+    finances: financesReducers,
+    filters: filtersReducers,
+    })
+
+const persistConfig = {
+    key: "root",
+    storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, reducers);
 
 export const store = configureStore({
-    reducer: {
-      auth: authReducer,
-      user: userSlice,
-      filters: filtersReducer,
-    },
-});
+    persistedReducer
+})
 
-export default store;
+export const persistor = persistStore(store);

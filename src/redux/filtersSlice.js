@@ -19,4 +19,4 @@ const filtersSlice = createSlice({
 });
 
 export const { setCategory, setDateRange } = filtersSlice.actions;
-export default filtersSlice.reducer;
+export const filtersReducers = filtersSlice.reducer;

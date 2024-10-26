@@ -8,7 +8,7 @@ import styles from './FinanceBoard.module.css'
 
 
 
-export const FinanceBoard = ({filteredFinance, activeFinances,  handleSpendingsPage, handleIncomesPage}) => {
+export const FinanceBoard = ({activeFinances,  handleSpendingsPage, handleIncomesPage}) => {
     const incomes = useSelector(selectIncomes)
     const spendings = useSelector(selectSpendings)
 
@@ -16,14 +16,14 @@ export const FinanceBoard = ({filteredFinance, activeFinances,  handleSpendingsP
         <section className={styles.finances}>
             <div className={styles.container}>
                 <div className={styles.title}>
-                    {activeFinances === incomes && <IoMdArrowDropleft className={styles.prev} onClick={() => handleSpendingsPage()}/>}
+                    {activeFinances === spendings && <IoMdArrowDropleft className={styles.prev} onClick={() => handleIncomesPage()}/>}
                     <h3>{activeFinances === incomes ? 'Доходи' : 'Витрати'}</h3>
-                    {activeFinances === spendings && <IoMdArrowDropright className={styles.next} onClick={() => handleIncomesPage()}/>}
+                    {activeFinances === incomes && <IoMdArrowDropright className={styles.next} onClick={() => handleSpendingsPage()}/>}
                 </div>
                 {activeFinances === incomes ? (
-                    <FinanceFlowsList data={filteredFinance}/>
+                    <FinanceFlowsList data={activeFinances}/>
                 ) : (
-                    <FinanceFlowsList data={filteredFinance}/>
+                    <FinanceFlowsList data={activeFinances}/>
                 )}
             </div>
         </section>
