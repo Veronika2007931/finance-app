@@ -3,19 +3,19 @@ import '@pnotify/core/dist/PNotify.css';
 import * as PNotifyMobile from '@pnotify/mobile';
 import '@pnotify/mobile/dist/PNotifyMobile.css';
 
-import { Login } from './Header/Login/Login';
+import { Route, Routes } from "react-router-dom";
+// import { Layout } from "./Navigation/Layout";
+import {HomePage} from "../Pages/HomePage"
+import {RegPage} from "../Pages/RegPage"
+import {LoginPage} from "../Pages/LoginPage"
+import {FinanceFlow} from "../Pages/FinanceFlow"
+import { SpendingsPage } from 'Pages/SpendingsPage';
+import { IncomesPage } from 'Pages/IncomesPage';import { Login } from './Header/Login/Login';
 import { Header } from './Header/Header'
 import { Modal } from "./Header/Login/Login.styled";
 import { Form, GoogleText, GoogleBtn, DefText, Input, LogInBtn, RegisterBtn } from "./Header/Login/Login.styled";
 defaultModules.set(PNotifyMobile, {});
-import { Route, Routes } from "react-router-dom";
-import { Layout } from "./Navigation/Layout";
-import {HomePage} from "../Pages/HomePage"
-import {RegPage} from "../Pages/RegPage"
-import {LoginPage} from "../Pages/LoginPage"
-import {Incomes} from "../Pages/Incomes"
-import {Spendings} from "../Pages/Spendings"
-import {FinanceFlow} from "../Pages/FinanceFlow"
+
 
 
 export const App = () => {
@@ -26,19 +26,14 @@ export const App = () => {
 
 const handleInpBtn = (e) => {
   e.preventDefault()
-<<<<<<< Updated upstream
-  if(e.currentTarget.elements.name.value === ''){
-    
-=======
   if(e.currentTarget.elements.email.value === ''){
-    showNotification()
->>>>>>> Stashed changes
+    // showNotification()
   }
 }
   return (
     <div>
 
-      <Login/>
+      {/* <Login/> */}
       <Header/>
       <Modal>
       <Form noValidate onSubmit={handleInpBtn}>
@@ -53,7 +48,7 @@ const handleInpBtn = (e) => {
             <RegisterBtn>Реєстрація</RegisterBtn>
           </Form>
       </Modal>
-      <Layout/>
+      {/* <Layout/> */}
       <Routes>
         <Route path="/"  element={<HomePage/>}/>
         <Route path="/registration" index element={<RegPage/>}/>
