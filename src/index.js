@@ -5,12 +5,16 @@ import { App } from 'components/App';
 import { BrowserRouter } from 'react-router-dom';
 import { store } from './redux/store';
 import './index.css';
+import { ThemeProvider } from 'styled-components';
+import { theme } from 'Styles/theme';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <React.StrictMode>
       <BrowserRouter basename='finance-app'>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </BrowserRouter>
     </React.StrictMode>
   </Provider>
