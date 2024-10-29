@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { selectSpendings, selectIncomes, selectFilters } from '../../redux/selectors'
-import { getFilteredFinances } from 'components/FinanceBoard/getFilteredFinances';
+import { getFinancesByPeriod } from 'components/FinanceBoard/getFilteredFinances';
 import styles from './FinanceFlowsBar.module.css'
 
 export const FinanceFlowsBar = () => {
@@ -11,7 +11,7 @@ export const FinanceFlowsBar = () => {
     const getIncomesSum = () => {
         let incomesSum = 0
 
-        getFilteredFinances(filter, incomes).map(({sum}) => {
+        getFinancesByPeriod(filter.dateRange, incomes).map(({sum}) => {
             incomesSum += sum
         })
 
@@ -21,7 +21,7 @@ export const FinanceFlowsBar = () => {
     const getSpendingsSum = () => {
         let spendingsSum = 0
 
-        getFilteredFinances(filter, spendings).map(({sum}) => {
+        getFinancesByPeriod(filter.dateRange, spendings).map(({sum}) => {
             
             spendingsSum += sum
         })

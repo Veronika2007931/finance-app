@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { selectSpendings, selectIncomes, selectFilters } from '../redux/selectors'
 import { setCategory, setDateRange } from '../redux/filtersSlice';
-import { getFilteredFinances } from '../components/FinanceBoard/getFilteredFinances';
+import { getFilteredFinances, getFinancesByPeriod } from '../components/FinanceBoard/getFilteredFinances';
 import { FinanceBoard } from 'components/FinanceBoard/FinanceBoard';
 import { Schedule } from 'components/Schedule/Schedule';
 import { FinanceFlowsNav } from 'components/FinanceFlowsNav/FinanceFlowsNav';
 import { FinanceFlowsBar } from 'components/FinanceFlowsBar/FinanceFlowsBar';
+import { incomesCategoriesList, spendingsCategoriesList } from 'components/FinanceFlowsList/categoriesList';
 
 export const getCurrentDate = () => {
     const currentDate = new Date();
@@ -23,6 +24,8 @@ export function FinanceFlow(){
     const spendings = useSelector(selectSpendings)
     const [activeFinances, setActiveFinances] = useState(incomes)
     const filteredFinance = getFilteredFinances(filter, activeFinances)
+    const filteredFinancesByPeriod = getFinancesByPeriod(filter.dateRange, activeFinances)
+    
     
     useEffect(() => {
         const currentDate = getCurrentDate()
@@ -31,21 +34,21 @@ export function FinanceFlow(){
     
     const handleSpendingsPage = () => {
         setActiveFinances(spendings)
-        dispatch(setCategory('all'))
+        dispatch(setCategory(spendingsCategoriesList[0].value))
     }
 
     const handleIncomesPage = () => {
         setActiveFinances(incomes)
-        dispatch(setCategory('all'))
+        dispatch(setCategory(incomesCategoriesList[0].value))
     }
 
 
 
     return (
         <>
-            <FinanceFlowsNav />
+            <FinanceFlowsNav incomes={incomes} spendings={spendings}/>
             <FinanceFlowsBar  />
-            <FinanceBoard activeFinances={activeFinances} handleIncomesPage={handleIncomesPage} handleSpendingsPage={handleSpendingsPage}/>
+            <FinanceBoard filteredFinancesByPeriod={filteredFinancesByPeriod} activeFinances={activeFinances} handleIncomesPage={handleIncomesPage} handleSpendingsPage={handleSpendingsPage}/>
             <Schedule data={filteredFinance}/>
         </>
     )
