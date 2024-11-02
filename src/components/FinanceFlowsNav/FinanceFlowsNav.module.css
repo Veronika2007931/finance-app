@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
     padding-block: 30px;
+    position: relative;
 }
 
 .container {
@@ -37,4 +38,51 @@
     height: 35px;
     color: #FF751D;
     cursor: pointer;
+}
+
+.balance {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.sum {
+    padding: 10px 20px 10px 20px;
+    border: 2px solid #F2F5FC;
+    border-radius: 15px;
+}
+
+.balance h3, .balance h4 {
+    margin: 0px;
+}
+
+.balance h4 {
+    color: #52555FB2;
+
+}
+
+@media screen and (max-width: 768px) {
+    .finance_flows_nav {
+        height: auto;
+        padding-top: 70px;
+    }    
+    .container {
+        height: auto;
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+    .back {
+        position: absolute;
+        left: 30px;
+        top: 20px;
+    }
+    .back h4 {
+        font-size: 0;
+    }
+    .balance {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

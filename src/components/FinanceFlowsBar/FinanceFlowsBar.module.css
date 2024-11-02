@@ -28,6 +28,9 @@
     color: #52555F;
 }
 
+.container h3 {
+  margin: 0px;
+}
 
 .line {
   width: 2px;
@@ -41,4 +44,21 @@
 
 .spendings {
   color: #E53935;
+}
+
+@media screen and (max-width: 768px) {
+  .finance_flows_bar {
+
+    padding-block: 30px;
+  }
+  .container {
+    padding-block: 20px;
+    border-radius: 20px;
+  }
+  .container > div {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
 }
