@@ -1,24 +1,23 @@
 import styled from 'styled-components';
 
-export const FinanceCountContainer = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+export const CountContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #ffffff;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+`;
 
-  @media (max-width: 768px) {
-    padding: 10px;
-  }
+export const CountText = styled.span`
+  font-size: 18px;
+  color: #FF751D;
+`;
 
-  h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  @media (max-width: 480px) {
-    padding: 5px;
-  }
+export const CountValue = styled.span`
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF751D;
 `;
