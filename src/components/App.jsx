@@ -44,11 +44,11 @@ const handleInpBtn = (e) => {
 
       <Routes>
         <Route path="/"  element={<HomePage/>}/>
-        <Route path="/registration" index element={<RegPage/>}/>
+        {/* <Route path="/registration" index element={<RegPage/>}/>
         <Route path="/loginization" element={<LoginPage/>}/>
         <Route path="/spendings" element={<SpendingsPage/>}/>
         <Route path="/incomes" element={<IncomesPage/>}/> 
-        <Route path="/finance-flows" element={<FinanceFlow/>}/>
+        <Route path="/finance-flows" element={<FinanceFlow/>}/> */}
       </Routes> 
       
       
