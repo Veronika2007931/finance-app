@@ -1,20 +1,8 @@
 // import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 
-export const HeaderText = styled.h3`
-  color: #000000;
-  size: 16px;
-  font-family: 'Roboto';
-  line-height: 18.75px;
-  margin: 10px;
 
-  width: 77px;
-  height: 19px;
-  top: 21px;
-  left: 48px;
-  gap: 0px;
-  opacity: 0px;
-`
+
 
 export const MainText = styled.h1`
    color: #000000;

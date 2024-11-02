@@ -1,10 +1,10 @@
 
 import { UserMenu } from "components/UserMenu/UserMenu"
-import { HeaderText } from "../Header/Login/Login.styled"
+import { HeaderText } from "./AppBar.styled"
 import { useState } from "react"
 import { Outlet } from "react-router-dom"
-import { Header } from "./AppBar.styled"
-import Logo from "../../imgs/logo.svg  "
+import { Header, Logo } from "./AppBar.styled"
+import logo from "../../imgs/logo.svg" 
 
 export const AppBar= ()=>{
   // const isLoggedIn = useSelector(selectIsLogged)
@@ -15,7 +15,7 @@ return(
  <>
  
   <Header>
-    <svg>{Logo}</svg>
+    <Logo src={logo} alt="logo"/>
    
   <HeaderText>INVESTIQ</HeaderText>
     {isLoggedIn && <UserMenu/> }

@@ -1,6 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
-
-const initialState = {
+export const financesCategories = Object.freeze({
     spendingsCategories: [
         {
             label: 'продукти',
@@ -72,10 +70,4 @@ const initialState = {
         }
     ]
 }
-
-const financesCategoriesSlice = createSlice({
-    name: 'financesCategories',
-    initialState,
-});
-
-export const financesCategoriesReducers =  financesCategoriesSlice.reducer;
+)

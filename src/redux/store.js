@@ -3,7 +3,6 @@ import storage from "redux-persist/lib/storage";
 import { filtersReducers } from './filtersSlice'
 import { authReducers } from './authSlice'
 import { financesReducers } from './financesSlice';
-import { financesCategoriesReducers } from './financesCategoriesSlice'
 import {
     persistStore,
     persistReducer,
@@ -18,8 +17,7 @@ import {
 const reducers = combineReducers({
     auth: authReducers,
     finances: financesReducers,
-    filters: filtersReducers,
-    financesCategories: financesCategoriesReducers,
+    filters: filtersReducers
     })
 
 const persistConfig = {

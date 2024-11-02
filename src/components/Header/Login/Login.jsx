@@ -37,7 +37,7 @@ export function Login(){
 
     return(
         <Backdrop>
-          <HeaderText>INVESTIQ</HeaderText>
+       
           <MainText>InvestIQ</MainText>
           <SecondMainText>SMART FINANCE</SecondMainText>
           <Modal>
