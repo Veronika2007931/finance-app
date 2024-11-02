@@ -8,9 +8,10 @@ import styles from './FinanceBoard.module.css'
 
 
 
-export const FinanceBoard = ({activeFinances,  handleSpendingsPage, handleIncomesPage}) => {
+export const FinanceBoard = ({filteredFinancesByPeriod, activeFinances,  handleSpendingsPage, handleIncomesPage}) => {
     const incomes = useSelector(selectIncomes)
     const spendings = useSelector(selectSpendings)
+    const flowsCategory = activeFinances === incomes ? 'incomes' : 'spendings'
 
     return (
         <section className={styles.finances}>
@@ -20,11 +21,7 @@ export const FinanceBoard = ({activeFinances,  handleSpendingsPage, handleIncome
                     <h3>{activeFinances === incomes ? 'Доходи' : 'Витрати'}</h3>
                     {activeFinances === incomes && <IoMdArrowDropright className={styles.next} onClick={() => handleSpendingsPage()}/>}
                 </div>
-                {activeFinances === incomes ? (
-                    <FinanceFlowsList data={activeFinances}/>
-                ) : (
-                    <FinanceFlowsList data={activeFinances}/>
-                )}
+                <FinanceFlowsList data={filteredFinancesByPeriod} flowsCategory={flowsCategory}/>
             </div>
         </section>
     )
