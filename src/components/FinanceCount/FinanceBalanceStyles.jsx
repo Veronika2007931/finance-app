@@ -1,23 +1,18 @@
 import styled from 'styled-components';
 
 export const BalanceContainer = styled.div`
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #ffffff;
   padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  border: 1px solid #FF751D;
-
-  @media (max-width: 768px) {
-    padding: 10px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 5px;
-  }
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 `;
 
 export const BalanceText = styled.h2`
-  color: #333;
-  font-size: 1.8rem;
+  font-size: 24px;
+  color: #FF751D;
+  margin: 0;
+  text-align: center;
 `;
