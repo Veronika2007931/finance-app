@@ -3,8 +3,8 @@ import { FinanceHistory } from "components/FinanceHistory/FinanceHistory"
 import { FinanceToggle } from "components/FinanceToggle/FinanceToggle"
 import { useSelector } from "react-redux"
 import { selectSpendings } from "../../redux/selectors"
-import { addSpendings } from "../../redux/userSlice"
-import { deleteSpendings } from "../../redux/userSlice"
+import { addSpendings } from "../../redux/financesSlice"
+import { deleteSpendings } from "../../redux/financesSlice"
 
 export const Spendings = () => {
     const financeList = useSelector(selectSpendings) 

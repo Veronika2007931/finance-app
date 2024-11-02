@@ -1,4 +1,4 @@
-import { FinanceTable } from "./FinanceHistory.styled"
+import { DelCol, FinanceTable } from "./FinanceHistory.styled"
 import { BsTrash3 } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 
@@ -19,13 +19,13 @@ export const FinanceHistory = ({isSpendings, finanseList, delfunc}) => {
                 </tr>
             </thead>
             <tbody>
-                {finanseList&&finanseList.map(item=>
+                {Array.isArray(finanseList)&&finanseList.map(item=>
                     <tr key={item.id}>
                         <td>{item.date}</td>
                         <td>{item.desciption}</td>
                         <td>{item.category}</td>
-                        <td>{isSpendings&&"-"}{item.sum}</td>
-                        <td><button type="button" onClick={onDelete(item.id)}><BsTrash3/></button></td>
+                        <td style={{fontWeight: 700,color: isSpendings?'#E7192E':'rgba(64, 121, 70, 1)'}}>{isSpendings&&"-"}{item.sum}</td>
+                        <DelCol><button type="button" onClick={()=>{onDelete(item.id)}}><BsTrash3/></button></DelCol>
                     </tr>
                 )}
             </tbody>
