@@ -6,12 +6,17 @@ export const ToggleList = styled.ul`
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background-color: #FAFBFD;
         height: 40px;
         border-radius: 16px 16px 0 0;
         text-decoration: none;
         font-weight: 700;
         color: black;
+        background: ${({theme})=>theme.color.buttGray};
+        border-radius: 20px 20px 0 0;
+        &.active{
+            background-color: white;
+            color: ${({theme})=>theme.color.buttOrTextOrange};
+        }
     }
     display: flex;
     list-style: none;

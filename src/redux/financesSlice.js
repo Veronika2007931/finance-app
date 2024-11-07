@@ -16,10 +16,17 @@ const financesSlice = createSlice({
   initialState,
   reducers: {
     addSpendings: (state, action) => {
+
+      state.spendings.push(action.payload)
+    },
+    addIncomes: (state, action) => {
+      state.incomes.push(action.payload)
+
         state.spendings.push(action.payload)
     },
     addIncomes: (state, action) => {
         state.incomes.push(action.payload)
+
     },
     deleteSpendings: (state, action) => {
       state.spendings.filter(item => item.id === action.payload)
