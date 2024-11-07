@@ -1,34 +1,32 @@
 import styled from 'styled-components';
-import { Tabs } from '@material-ui/core';
 
 export const ChartContainer = styled.div`
-  margin-top: 20px;
   background-color: #ffffff;
   padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #FF751D;
-
-  @media (max-width: 768px) {
-    padding: 10px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 5px;
-  }
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 `;
 
-export const StyledTabs = styled(Tabs)`
-  .MuiTab-root {
-    color: #333;
-  }
+export const TabContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+`;
 
-  .Mui-selected {
+export const TabButton = styled.button`
+  padding: 10px 20px;
+  font-size: 16px;
+  color: ${({ isActive }) => (isActive ? '#ffffff' : '#FF751D')};
+  background-color: ${({ isActive }) => (isActive ? '#FF751D' : '#ffffff')};
+  border: 2px solid #FF751D;
+  border-radius: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #FF751D;
     color: #ffffff;
-    background-color: #FF751D;
-    border-radius: 8px;
-  }
-
-  .MuiTabs-indicator {
-    background-color: #FF751D;
   }
 `;

@@ -1,19 +1,18 @@
 import React from 'react';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { Balance } from './Balance';
-import { Summary } from './Summary';
-import { FinanceCountContainer } from './FinanceCountStyles';
+import { useSelector } from 'react-redux';
+import { selectSpendings, selectIncomes } from '../../redux/selectors';
+import { CountContainer, CountText, CountValue } from './FinanceCountStyles';
 
-const FinanceCount = () => {
+export const Count = () => {
+  const spendings = useSelector(selectSpendings);
+  const incomes = useSelector(selectIncomes);
+
+  const totalTransactions = spendings.length + incomes.length;
+
   return (
-    <FinanceCountContainer>
-      <h1>FinanceCount Dashboard</h1>
-      <Balance />
-      <Summary />
-      <ToastContainer />
-    </FinanceCountContainer>
+    <CountContainer>
+      <CountText>Total Transactions:</CountText>
+      <CountValue>{totalTransactions}</CountValue>
+    </CountContainer>
   );
 };
-
-export default FinanceCount;

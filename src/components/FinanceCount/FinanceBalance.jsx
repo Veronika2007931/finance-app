@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { BalanceContainer, BalanceText } from './BalanceStyles';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { selectSpendings, selectIncomes } from '../../redux/selectors';
+import { BalanceContainer, BalanceText } from './FinanceBalanceStyles';
 
 export const Balance = () => {
-  const [balance, setBalance] = useState(0);
+  const spendings = useSelector(selectSpendings);
+  const incomes = useSelector(selectIncomes);
 
-  useEffect(() => {
-    const userBalance = 1200;
-    setBalance(userBalance);
-  }, []);
+  const balance = incomes.reduce((acc, income) => acc + income.sum, 0) - 
+                  spendings.reduce((acc, spending) => acc + spending.sum, 0);
 
   return (
     <BalanceContainer>
