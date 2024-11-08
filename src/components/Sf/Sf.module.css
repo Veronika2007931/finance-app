@@ -1,0 +1,45 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    &.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+      & .modal-event {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+}
+.modal-event{
+    background: rgba(255, 242, 253, 1);
+    width: 842px;
+    height: 923px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 40px;
+    border-radius: 4px;
+    border-radius: 300px 0px;
+}
+button.close { 
+    padding: 0; 
+    visibility: hidden; 
+    margin: 0; 
+    padding-left: 875px; 
+} 
+button.close img { 
+    visibility: visible;
+    display: block;
+}
+button.close{
+    padding-left: 730px;
+}
