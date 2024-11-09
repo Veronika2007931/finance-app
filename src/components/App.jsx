@@ -12,12 +12,6 @@ import { Modal } from "./Header/Login/Login.styled";
 import { GlobalStyle } from "Styles/Global.styled";
 
 
-
-
-
-
-
-
 export const App = () => {
 
   return (
