@@ -5,16 +5,19 @@ import { useSelector } from "react-redux"
 import { selectSpendings } from "../../redux/selectors"
 import { addSpendings } from "../../redux/financesSlice"
 import { deleteSpendings } from "../../redux/financesSlice"
+import styles from './Spendings.module.css'
 
 export const Spendings = () => {
     const financeList = useSelector(selectSpendings) 
     return(
-        <section>
-            <FinanceToggle/>
-            <div>
-                <FinanceForm isSpendings={true} finAdd={addSpendings}/>
-                <FinanceHistory isSpendings={true}  finanseList={financeList} delfunc={deleteSpendings}/>
-                {/* Тут має бути елемент зведення */}
+        <section className={styles.spendings_section}>
+            <div className={styles.container}>
+                <FinanceToggle/>
+                <div className={styles.actions_container}>
+                    <FinanceForm isSpendings={true} finAdd={addSpendings}/>
+                    <FinanceHistory isSpendings={true}  finanseList={financeList} delfunc={deleteSpendings}/>
+                    {/* Тут має бути елемент зведення */}
+                </div>
             </div>
         </section>
     )

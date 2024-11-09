@@ -8,7 +8,9 @@ import {IncomesPage} from "../Pages/IncomesPage"
 import {SpendingsPage} from "../Pages/SpendingsPage"
 import {FinanceFlow} from "../Pages/FinanceFlow"
 import { GlobalStyle } from "Styles/Global.styled";
+
 import { RestrictedRout } from "./RestrictedRout/RestrictedRout";
+
 
 export const App = () => {
 
