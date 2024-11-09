@@ -26,13 +26,11 @@ export const App = () => {
 
 const handleInpBtn = (e) => {
   e.preventDefault()
-<<<<<<< Updated upstream
   if(e.currentTarget.elements.name.value === ''){
     
-=======
+
   if(e.currentTarget.elements.email.value === ''){
     showNotification()
->>>>>>> Stashed changes
   }
 }
   return (
@@ -68,4 +66,4 @@ const handleInpBtn = (e) => {
 
     </div>
   );
-};
+}};
