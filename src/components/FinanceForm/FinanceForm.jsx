@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import { ClearBtn, DateInp, FinForm, SubBtn } from "./FinanceForm.styled"
 import { nanoid } from "nanoid"
 
-export const FinanceForm = ({isSpendings, finAdd}) => {
+export const FinanceForm = ({isSpendings, finAdd, categoryOptions}) => {
     const dispatch = useDispatch()
     const handleAdd = (e) => {
         e.preventDefault()
@@ -21,11 +21,11 @@ export const FinanceForm = ({isSpendings, finAdd}) => {
         <FinForm onSubmit={handleAdd}>
             <DateInp type="date" name="date"/>
             <input type="text" name="description" placeholder={`Опис ${isSpendings?"товару":"продукту"}`}/>
-            <select name="category" >
+            <select name="category" placeholder="">
                 <option key='none' disabled selected hidden value=''>{`Категорія ${isSpendings?"товару":"продукту"}`}</option>
-                {/* {categoryOptions.map(category=>{
-                    return <option key={category} value={category}>{category}</option>
-                })} */}
+                {categoryOptions.map(category=>{
+                    return <option key={category.value} value={category.value}>{category.label}</option>
+                })}
             </select>
             <input  type="number" name="sum" placeholder="0,00"/>
             <SubBtn type="submit">ввести</SubBtn>
