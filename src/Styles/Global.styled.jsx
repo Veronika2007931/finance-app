@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle=createGlobalStyle`
+
 html{
   box-sizing: border-box;
 }
@@ -10,6 +11,7 @@ html{
 *::after{
   box-sizing: inherit;
 }
+
 
 body {
     margin: 0;
