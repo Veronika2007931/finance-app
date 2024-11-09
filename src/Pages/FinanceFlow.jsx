@@ -44,12 +44,20 @@ export function FinanceFlow(){
 
 
 
-    return (
-        <>
-            <FinanceFlowsNav incomes={incomes} spendings={spendings}/>
-            <FinanceFlowsBar  />
-            <FinanceBoard filteredFinancesByPeriod={filteredFinancesByPeriod} activeFinances={activeFinances} handleIncomesPage={handleIncomesPage} handleSpendingsPage={handleSpendingsPage}/>
-            <Schedule data={filteredFinance}/>
-        </>
-    )
+    if (incomes && spendings) {
+        return (
+            <>
+                <FinanceFlowsNav />
+                <FinanceFlowsBar  />
+                <FinanceBoard filteredFinancesByPeriod={filteredFinancesByPeriod} activeFinances={activeFinances} handleIncomesPage={handleIncomesPage} handleSpendingsPage={handleSpendingsPage}/>
+                <Schedule data={filteredFinance}/>
+            </>
+        )
+    } else {
+        return (
+            <div>
+                <h2>Не вдалося отримати данні</h2>
+            </div>
+        )
     }
+}
