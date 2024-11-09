@@ -1,6 +1,7 @@
+import { Login } from "components/Header/Login/Login"
 
 export function LoginPage(){
     return(
-        <h1>LoginPage</h1>
+       <Login/>
     )
-    }
+}

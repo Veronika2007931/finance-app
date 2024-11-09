@@ -14,6 +14,18 @@ export const MainText = styled.h1`
    margin-left: 270px;
    margin-top: 200px;
    margin-bottom: 0px;
+
+   @media screen and (min-width:${(p) => p.mobile}){
+      
+   }
+
+   @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+       
+   }
+
+   @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+        
+   }
 `
 
 export const SecondMainText = styled.h3`
@@ -26,6 +38,18 @@ export const SecondMainText = styled.h3`
     width: 159px;
     height: 19px;
     margin-left: 400px;
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        
+      }
+  
+      @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+          
+      }
+  
+      @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+          
+      }
 `
 
 export const Form = styled.form`
@@ -34,11 +58,26 @@ export const Form = styled.form`
    gap: 20px;
    position: absolute;
    background-color: white;
-  top: 173px;
-  left: 734px;
 
   padding: 50px 40px;
   border-radius: 16px;
+
+  box-shadow: 10px 10px 100px 10px #AAB2C533;
+
+  @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        top: 400px;
+        left: 85px;
+  }
+  
+  @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+        top: 400px;
+        left: 200px;
+  }
+  
+  @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+    top: 173px;
+    left: 734px;
+  }
 `
 
 export const GoogleBtn = styled.button`
@@ -53,6 +92,18 @@ export const GoogleBtn = styled.button`
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        
+  }
+  
+  @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+          
+  }
+  
+  @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+          
+  }
 `
 
 export const DefText = styled.p`
@@ -62,6 +113,18 @@ export const DefText = styled.p`
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        
+  }
+      
+  @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+              
+  }
+      
+  @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+              
+  }
 `
 
 export const Input = styled.input` 
@@ -70,6 +133,18 @@ export const Input = styled.input`
     border: none;
     padding: 5px;
     width: 220px;
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        
+    }
+      
+    @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+              
+    }
+      
+    @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+              
+    }
 `
 
 export const LogInBtn = styled.button`
@@ -82,6 +157,18 @@ export const LogInBtn = styled.button`
     padding: 12px 34px;
     color: white;
     margin-right: 15px;
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        
+    }
+      
+    @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+              
+    }
+      
+    @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+              
+    }
 `
 
 export const RegisterBtn = styled(Link)`
@@ -93,6 +180,18 @@ export const RegisterBtn = styled(Link)`
   box-shadow: 5px, 5px, 0px, #aab2c533;
   padding: 12px 15px;
   color: grey;
+
+  @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        
+  }
+      
+  @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+              
+  }
+      
+  @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+              
+  }
 `
 
 export const Backdrop = styled.div`
@@ -107,4 +206,39 @@ export const Backdrop = styled.div`
 
 export const GoogleText = styled.p`
   color: #52555F;
+
+  @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        
+  }
+      
+  @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+              
+  }
+      
+  @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+              
+  }
+`
+
+export const RegBtn = styled.button`
+  background-color: #e4e4e4;
+  font-weight: 700;
+  font-size: 12px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 5px, 5px, 0px, #aab2c533;
+  padding: 12px 15px;
+  color: grey;
+
+  @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+        
+  }
+      
+  @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+              
+  }
+      
+  @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+              
+  }
 `

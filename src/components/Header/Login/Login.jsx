@@ -2,22 +2,15 @@
 import { info } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/bootstrap4/dist/PNotifyBootstrap4.css';
-import { HeaderText, MainText, SecondMainText, Form, 
+import { useDispatch } from 'react-redux';
+import { login } from '../../../redux/authSlice';
+import {  MainText, SecondMainText, Form, 
 GoogleBtn, DefText, Input, LogInBtn,
 Backdrop, GoogleText, RegisterBtn } from "./Login.styled"
 
 export function Login(){
-  
-      //   <Notification
-      //     type='notice'
-      //     title='Попередження!'
-      //     text='Заповніть усі поля щоб увійти.'
-      //     delay={2000}
-      //     shadow={false}
-      //     hide={false}
-      //     nonblock={true}
-      //     desktop={true}
-      //  />
+
+  const dispatch = useDispatch()
 
       const showNotification = () => {
          info({
@@ -30,9 +23,19 @@ export function Login(){
 
     const handleInpBtn = (e) => {
         e.preventDefault()
+
+        const form = e.currentTarget
+        const objUser = {
+            email: e.currentTarget.elements.email.value,
+            password: e.currentTarget.elements.password.value,
+        }
+        
         if(e.currentTarget.elements.email.value === ''){
            showNotification()
         }
+        
+        dispatch(login(objUser))
+        form.reset()
     }
 
     return(

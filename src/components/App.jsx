@@ -18,8 +18,8 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/"  element={<HomePage/>}/>
-        <Route  index element={<RegPage/>}/>
-        <Route path="/loginization" element={<LoginPage/>}/>
+        <Route  index element={<LoginPage/>}/>
+        <Route path="/loginization" element={<RegPage/>}/>
         <Route path="/spendings" element={<SpendingsPage/>}/>
         <Route path="/incomes" element={<IncomesPage/>}/> 
         <Route path="/finance-flows" element={<FinanceFlow/>}/>
