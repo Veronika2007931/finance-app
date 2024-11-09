@@ -7,9 +7,9 @@ import {LoginPage} from "../Pages/LoginPage"
 import {IncomesPage} from "../Pages/IncomesPage"
 import {SpendingsPage} from "../Pages/SpendingsPage"
 import {FinanceFlow} from "../Pages/FinanceFlow"
-import { Login } from './Header/Login/Login';
-import { Modal } from "./Header/Login/Login.styled";
 import { GlobalStyle } from "Styles/Global.styled";
+
+import { RestrictedRout } from "./RestrictedRout/RestrictedRout";
 
 
 export const App = () => {
@@ -18,8 +18,12 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/"  element={<HomePage/>}/>
+
         <Route  index element={<LoginPage/>}/>
-        <Route path="/loginization" element={<RegPage/>}/>
+
+        <Route  index element={<RegPage/>}/>
+        <Route path="/loginization" element={<RestrictedRout element={<LoginPage/>} redirectTo="/incomes"/>}/>
+
         <Route path="/spendings" element={<SpendingsPage/>}/>
         <Route path="/incomes" element={<IncomesPage/>}/> 
         <Route path="/finance-flows" element={<FinanceFlow/>}/>
