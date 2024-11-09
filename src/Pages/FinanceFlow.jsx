@@ -7,7 +7,7 @@ import { FinanceBoard } from 'components/FinanceBoard/FinanceBoard';
 import { Schedule } from 'components/Schedule/Schedule';
 import { FinanceFlowsNav } from 'components/FinanceFlowsNav/FinanceFlowsNav';
 import { FinanceFlowsBar } from 'components/FinanceFlowsBar/FinanceFlowsBar';
-import { incomesCategoriesList, spendingsCategoriesList } from 'components/FinanceFlowsList/categoriesList';
+import { financesCategories } from '../redux/constants';
 
 export const getCurrentDate = () => {
     const currentDate = new Date();
@@ -34,12 +34,12 @@ export function FinanceFlow(){
     
     const handleSpendingsPage = () => {
         setActiveFinances(spendings)
-        dispatch(setCategory(spendingsCategoriesList[0].value))
+        dispatch(setCategory(financesCategories.spendingsCategories[0].value))
     }
 
     const handleIncomesPage = () => {
         setActiveFinances(incomes)
-        dispatch(setCategory(incomesCategoriesList[0].value))
+        dispatch(setCategory(financesCategories.incomesCategories[0].value))
     }
 
 
