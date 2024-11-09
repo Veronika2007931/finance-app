@@ -1,7 +1,7 @@
-
+import { Login } from "components/Header/Login/Login"
 
 export function RegPage(){
     return(
-        <h1>RegPage</h1>
+        <Login/>
     )
     }
