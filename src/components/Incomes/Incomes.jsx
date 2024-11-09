@@ -5,17 +5,19 @@ import { useSelector } from "react-redux"
 import { selectIncomes } from "../../redux/selectors"
 import { addIncomes } from "../../redux/financesSlice"
 import { deleteIncomes } from "../../redux/financesSlice"
+import { financesCategories } from "../../redux/constants"
+import { Container, Section } from "./Incomes.styled"
 
 export const Incomes = () => {
-    const financeList = useSelector(selectIncomes) 
+    const financeList = useSelector(selectIncomes)
     return(
-        <section>
+        <Section>
             <FinanceToggle/>
-            <div>
-                <FinanceForm isSpendings={false} finAdd={addIncomes}/>
+            <Container>
+                <FinanceForm isSpendings={false} finAdd={addIncomes} categoryOptions={financesCategories.incomesCategories}/>
                 <FinanceHistory isSpendings={false} finanseList={financeList} delfunc={deleteIncomes}/>
                 {/* Тут має бути елемент зведення */}
-            </div>
-        </section>
+            </Container>
+        </Section>
     )
 }
