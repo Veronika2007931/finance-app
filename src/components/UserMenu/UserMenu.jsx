@@ -12,7 +12,7 @@ export function UserMenu(){
         <UMDiv>
          <PhotoDiv>{user && user.name.slice(0,1) }</PhotoDiv>
         <UserNameText> {user ? user.name : "Hello"} </UserNameText>
-        <UserNameEl>| </UserNameEl>
+        <UserNameEl>|</UserNameEl>
         <ExitBtn onClick={()=>{
             dispatch(logout())
         }}>Вийти</ExitBtn >
