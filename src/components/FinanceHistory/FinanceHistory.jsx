@@ -1,9 +1,12 @@
-import { FinanceTable } from "./FinanceHistory.styled"
-import { nanoid } from "nanoid"
+import { DelCol, FinanceTable } from "./FinanceHistory.styled"
 import { BsTrash3 } from "react-icons/bs";
+import { useDispatch } from "react-redux";
 
-export const FinanceHistory = ({finanseList}) => {
-
+export const FinanceHistory = ({isSpendings, finanseList, delfunc}) => {
+    const dispatch = useDispatch()
+    const onDelete = (id) => {
+        dispatch(delfunc(id))
+    }
     return(
         <FinanceTable>
             <thead>
@@ -16,13 +19,13 @@ export const FinanceHistory = ({finanseList}) => {
                 </tr>
             </thead>
             <tbody>
-                {finanseList.map(item=>
-                    <tr key={nanoid()}>
+                {Array.isArray(finanseList)&&finanseList.map(item=>
+                    <tr key={item.id}>
                         <td>{item.date}</td>
                         <td>{item.desciption}</td>
                         <td>{item.category}</td>
-                        <td>{item.sum}</td>
-                        <td><button type="button"><BsTrash3/></button></td>
+                        <td style={{fontWeight: 700,color: isSpendings?'#E7192E':'rgba(64, 121, 70, 1)'}}>{isSpendings&&"-"}{item.sum}</td>
+                        <DelCol><button type="button" onClick={()=>{onDelete(item.id)}}><BsTrash3/></button></DelCol>
                     </tr>
                 )}
             </tbody>

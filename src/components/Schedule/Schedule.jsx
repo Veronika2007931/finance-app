@@ -10,6 +10,26 @@ Chart.register(CategoryScale, ChartDataLabels );
 
 
 export const Schedule = ({data}) => {
+  
+  useEffect(() => {
+    setChartData({
+      labels: data.map((financeFlow) => financeFlow.desciption),
+      datasets: [
+        {
+          label: data.map((financeFlow) => financeFlow.item),
+          data: data.map((financeFlow) => financeFlow.sum),
+          backgroundColor: [
+            "#FF751D",
+            "#FFDAC0",
+            "#FFDAC0",
+          ],
+          borderRadius: 15,
+          barThickness: 50,
+        },
+      ],
+    })
+  }, [data])
+  
   const [indexAxsis, setIndexAxsis] = useState('x')
     
   useEffect(() => {
@@ -34,11 +54,17 @@ export const Schedule = ({data}) => {
         },
       ],
   })
+  
 
   const options = {
     responsive: true,
     maintainAspectRatio: indexAxsis === 'x' ? true : false,
     indexAxis: indexAxsis,
+    layout: {
+      padding: {
+        top: 50
+      }
+    },
     plugins: {
       legend: {
         display: false,
@@ -62,10 +88,11 @@ export const Schedule = ({data}) => {
     scales: {
       x: {
         ticks: {
-            color: 'black',
-            font: {
-              size: indexAxsis === 'y' ? 0 : 14
-            }
+          color: 'black',
+          font: {
+            size: indexAxsis === 'y' ? 0 : 14,
+            color: '#ffffff',
+          }
         }
       },
       y: {
@@ -75,7 +102,8 @@ export const Schedule = ({data}) => {
           maxRotation: 90,
           color: 'black',
           font: {
-            size: indexAxsis === 'x' ? 0 : 14
+            size: indexAxsis === 'x' ? 0 : 14,
+            color: '#ffffff',
           },
         },
       },
@@ -83,12 +111,12 @@ export const Schedule = ({data}) => {
   } 
 
   return (
-        <section className={styles.schedule}>
-            <div className={styles.container}>
-              <div className={styles.wrapper_canvas}>
-                <Bar style={{}} chartData={chartData} options={options} data={chartData}/>
-              </div>
-            </div>
-        </section>
+    <section className={styles.schedule}>
+        <div className={styles.container}>
+          {data.length > 0 ? <div className={styles.wrapper_canvas}>
+            <Bar style={{}} chartData={chartData} options={options} data={chartData}/>
+          </div> : <div><h3>Немає данних</h3></div>}
+        </div>
+    </section>
   )
 }

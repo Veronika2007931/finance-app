@@ -15,10 +15,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    gap: 40px;
+    padding-block: 20px;
     background-color: white;
     border-radius: 30px;
     box-shadow: 0px 10px 60px 0px #AAB2C533;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .title {
@@ -31,7 +34,10 @@
         font-size: 30px;
     }
     svg {
+        width: 40px;
+        height: 40px;
         position: absolute;
+        color: #FF751D;;
     }
     .prev {
         left: -40px;
@@ -40,4 +46,13 @@
         right: -40px;
     }
 
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    .container {
+        height: auto;
+        padding-bottom: 30px;
+    }
 }

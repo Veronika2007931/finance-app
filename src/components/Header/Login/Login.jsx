@@ -4,7 +4,7 @@ import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/bootstrap4/dist/PNotifyBootstrap4.css';
 import { HeaderText, MainText, SecondMainText, Form, 
 GoogleBtn, DefText, Input, LogInBtn,
-Backdrop, Modal, GoogleText, RegisterBtn } from "./Login.styled"
+Backdrop, GoogleText, RegisterBtn } from "./Login.styled"
 
 export function Login(){
   
@@ -21,7 +21,7 @@ export function Login(){
 
       const showNotification = () => {
          info({
-          text: 'Це повідомлення від PNotify!',
+          text: 'Заповність всі поля щоб увійти.',
           type: 'notice', // тип повідомлення (може бути 'notice', 'info', 'success', 'error')
           styling: 'bootstrap4', // використання Bootstrap 4 стилів
           delay: 2000, // час відображення (мс)
@@ -37,22 +37,26 @@ export function Login(){
 
     return(
         <Backdrop>
-          <HeaderText>INVESTIQ</HeaderText>
+       
+       <div>
           <MainText>InvestIQ</MainText>
           <SecondMainText>SMART FINANCE</SecondMainText>
-          <Modal>
+       </div>
             <Form noValidate onSubmit={handleInpBtn}>
             <GoogleText>Ви можете авторизуватися за допомогою акаунта Google.</GoogleText>
             <GoogleBtn type="submit">Google</GoogleBtn>
             <GoogleText>Або увійти за допомогою ел. пошти та паролю після реєстрації.</GoogleText>
-            <DefText>Електронна пошта:</DefText> 
-            <Input type="text" name="email" placeholder="your@email.com" />
-            <DefText>Пароль:</DefText>
-            <Input type="text" name="password" placeholder="password"/>
-            <LogInBtn type="submit">Увійти</LogInBtn>
-            <RegisterBtn>Реєстрація</RegisterBtn>
+            <DefText>Електронна пошта:
+              <Input type="text" name="email" placeholder="your@email.com" />
+            </DefText> 
+            <DefText>Пароль:
+              <Input type="text" name="password" placeholder="password"/>
+            </DefText> 
+            <div>
+              <LogInBtn type="submit">Увійти</LogInBtn>
+              <RegisterBtn to='/loginization'>Реєстрація</RegisterBtn>
+            </div>
           </Form>
-          </Modal>
         </Backdrop>
     )
 }
