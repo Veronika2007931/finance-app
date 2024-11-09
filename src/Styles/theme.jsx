@@ -8,4 +8,10 @@ export const theme=Object.freeze({
         justWhite:'white'
     },
     fontSize:[12,14,16,102],
+
+    breakpoints:{ 
+        mobile : '320px', 
+        tablet  : '768px', 
+        desktop : '1200px' 
+     },  
 })

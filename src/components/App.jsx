@@ -18,8 +18,12 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/"  element={<HomePage/>}/>
+
+        <Route  index element={<LoginPage/>}/>
+
         <Route  index element={<RegPage/>}/>
         <Route path="/loginization" element={<RestrictedRout element={<LoginPage/>} redirectTo="/incomes"/>}/>
+
         <Route path="/spendings" element={<SpendingsPage/>}/>
         <Route path="/incomes" element={<IncomesPage/>}/> 
         <Route path="/finance-flows" element={<FinanceFlow/>}/>
