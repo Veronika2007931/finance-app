@@ -7,7 +7,7 @@ import { FinanceBoard } from 'components/FinanceBoard/FinanceBoard';
 import { Schedule } from 'components/Schedule/Schedule';
 import { FinanceFlowsNav } from 'components/FinanceFlowsNav/FinanceFlowsNav';
 import { FinanceFlowsBar } from 'components/FinanceFlowsBar/FinanceFlowsBar';
-import { incomesCategoriesList, spendingsCategoriesList } from 'components/FinanceFlowsList/categoriesList';
+import { financesCategories } from '../redux/constants';
 
 export const getCurrentDate = () => {
     const currentDate = new Date();
@@ -34,22 +34,30 @@ export function FinanceFlow(){
     
     const handleSpendingsPage = () => {
         setActiveFinances(spendings)
-        dispatch(setCategory(spendingsCategoriesList[0].value))
+        dispatch(setCategory(financesCategories.spendingsCategories[0].value))
     }
 
     const handleIncomesPage = () => {
         setActiveFinances(incomes)
-        dispatch(setCategory(incomesCategoriesList[0].value))
+        dispatch(setCategory(financesCategories.incomesCategories[0].value))
     }
 
 
 
-    return (
-        <>
-            <FinanceFlowsNav incomes={incomes} spendings={spendings}/>
-            <FinanceFlowsBar  />
-            <FinanceBoard filteredFinancesByPeriod={filteredFinancesByPeriod} activeFinances={activeFinances} handleIncomesPage={handleIncomesPage} handleSpendingsPage={handleSpendingsPage}/>
-            <Schedule data={filteredFinance}/>
-        </>
-    )
+    if (incomes && spendings) {
+        return (
+            <>
+                <FinanceFlowsNav />
+                <FinanceFlowsBar  />
+                <FinanceBoard filteredFinancesByPeriod={filteredFinancesByPeriod} activeFinances={activeFinances} handleIncomesPage={handleIncomesPage} handleSpendingsPage={handleSpendingsPage}/>
+                <Schedule data={filteredFinance}/>
+            </>
+        )
+    } else {
+        return (
+            <div>
+                <h2>Не вдалося отримати данні</h2>
+            </div>
+        )
     }
+}

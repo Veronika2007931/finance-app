@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import {  selectFilters } from '../../redux/selectors'
 import { setCategory } from '../../redux/filtersSlice'
-import { incomesCategoriesList, spendingsCategoriesList } from './categoriesList'
+import { financesCategories } from '../../redux/constants'
 import { getCategorySum } from './getCategorySum'
 import { ReactSVG } from "react-svg";
 
@@ -16,12 +16,14 @@ export const FinanceFlowsList = ({data, flowsCategory}) => {
         dispatch(setCategory(category))
     }
     
+   console.log(financesCategories);
     
     return (
         <ul className={styles.list}>
-            {flowsCategory === 'incomes' ? incomesCategoriesList.map(({value, label, img}) => {
+            {flowsCategory === 'incomes' ? financesCategories.incomesCategories.map(({value, label, img}) => {
                 const categorySum = getCategorySum(data, value)
-                console.log(img)
+                console.log(img);
+                
                 
                 return <li className={styles.item} onClick={() => handleChangeCategory(value)}>
                     <h4>{categorySum}</h4>
@@ -31,7 +33,7 @@ export const FinanceFlowsList = ({data, flowsCategory}) => {
                     </div>
                     <h4>{label}</h4>
                 </li>
-            }) : spendingsCategoriesList.map(({value, label, img}) => {
+            }) : financesCategories.spendingsCategories.map(({value, label, img}) => {
                 const categorySum = getCategorySum(data, value)
                 return <li className={styles.item} onClick={() => handleChangeCategory(value)}>
                     <h4>{categorySum}</h4>
