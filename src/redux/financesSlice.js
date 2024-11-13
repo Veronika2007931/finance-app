@@ -34,7 +34,7 @@ const financesSlice = createSlice({
     }
 
   },
-});
+);
 
 export const {addSpendings, addIncomes, deleteIncomes, deleteSpendings} = financesSlice.actions;
 export const financesReducers =  financesSlice.reducer;
