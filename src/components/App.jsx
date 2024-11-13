@@ -22,7 +22,7 @@ export const App = () => {
         <Route  index element={<LoginPage/>}/>
 
         <Route  index element={<RegPage/>}/>
-        <Route path="/loginization" element={<RestrictedRout element={<LoginPage/>} redirectTo="/incomes"/>}/>
+        <Route path="/loginization" element={<RestrictedRout element={<LoginPage/>} redirectTo="incomes"/>}/>
 
         <Route path="/spendings" element={<SpendingsPage/>}/>
         <Route path="/incomes" element={<IncomesPage/>}/> 

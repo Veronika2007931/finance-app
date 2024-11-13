@@ -11,20 +11,21 @@ export const MainText = styled.h1`
 
    width: 385px;
    height: 120px;
-   margin-left: 270px;
+   
    margin-top: 200px;
    margin-bottom: 0px;
+   margin-left: 40px;
 
    @media screen and (min-width:${(p) => p.mobile}){
       
    }
 
    @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
-       
+      margin-left: 200px;
    }
 
    @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
-        
+      margin-left: 270px;
    }
 `
 
@@ -37,18 +38,18 @@ export const SecondMainText = styled.h3`
 
     width: 159px;
     height: 19px;
-    margin-left: 400px;
+    
 
     @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
-        
+        margin-left: 160px;
       }
   
       @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
-          
+        margin-left: 290px;
       }
   
       @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
-          
+        margin-left: 400px;
       }
 `
 
@@ -66,7 +67,7 @@ export const Form = styled.form`
 
   @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
         top: 400px;
-        left: 85px;
+        left: 25px;
   }
   
   @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
@@ -83,7 +84,7 @@ export const Form = styled.form`
 export const GoogleBtn = styled.button`
   background-color: #e0e0e0;
   font-weight: 700;
-    font-size: 12px;
+  font-size: 12px;
   border: none;
   border-radius: 10px;
   margin-top: 15px;
@@ -202,6 +203,17 @@ export const Backdrop = styled.div`
     backdrop-filter: blur(4px);
     background-color: #efefef;
     z-index: 10;
+
+    @media screen and (min-width:${(p) => p.theme.breakpoints.mobile}){
+      }
+          
+      @media screen and (min-width:${(p) => p.theme.breakpoints.tablet}){
+      }
+          
+      @media screen and (min-width:${(p) => p.theme.breakpoints.desktop}){
+          width: auto;
+          height: auto;
+      }
 `
 
 export const GoogleText = styled.p`
