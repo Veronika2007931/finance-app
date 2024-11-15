@@ -18,17 +18,15 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/"  element={<HomePage/>}/>
-
         <Route  index element={<RestrictedRout element={<LoginPage/>} redirectTo="incomes"/>}/>
-
         <Route  index element={<RegPage/>}/>
         <Route path="/register" element={<RegPage/>}/>
-
         <Route path="/spendings" element={ <PrivatRout element={<SpendingsPage/>} redirectTo="/"></PrivatRout> } />
         <Route path="/incomes" element={<PrivatRout element={<IncomesPage/>} redirectTo="/"/>}/> 
         <Route path="/finance-flows" element={<FinanceFlow/>}/>
       </Routes> 
       <GlobalStyle/>
+
     </div>
   );
 }
