@@ -15,7 +15,8 @@ export const Incomes = () => {
     const financeList = useSelector(selectIncomes)
     return(
 
-        <Section>
+        <>
+             <Section>
             <FinanceToggle/>
             <Container>
                 <FinanceForm isSpendings={false} finAdd={addIncomes} categoryOptions={financesCategories.incomesCategories}/>
@@ -34,6 +35,7 @@ export const Incomes = () => {
                 </div>
             </div>
         </section>
+        </>
 
     )
 }

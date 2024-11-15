@@ -4,6 +4,7 @@ import { nanoid } from "nanoid"
 
 export const FinanceForm = ({isSpendings, finAdd, categoryOptions}) => {
     const dispatch = useDispatch()
+    console.log(categoryOptions);
     const handleAdd = (e) => {
         e.preventDefault()
         const form = e.currentTarget
@@ -22,8 +23,7 @@ export const FinanceForm = ({isSpendings, finAdd, categoryOptions}) => {
             <DateInp type="date" name="date"/>
             <input type="text" name="description" placeholder={`Опис ${isSpendings?"товару":"продукту"}`}/>
             <select name="category" placeholder="">
-                <option key='none' disabled selected hidden value=''>{`Категорія ${isSpendings?"товару":"продукту"}`}</option>
-                {categoryOptions.map(category=>{
+                {categoryOptions && categoryOptions.map(category=>{
                     return <option key={category.value} value={category.value}>{category.label}</option>
                 })}
             </select>

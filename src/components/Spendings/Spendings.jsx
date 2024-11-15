@@ -16,6 +16,7 @@ export const Spendings = () => {
     const financeList = useSelector(selectSpendings) 
     return(
 
+        <>
         <Section>
             <FinanceToggle/>
             <Container>
@@ -36,5 +37,6 @@ export const Spendings = () => {
             </div>
         </section>
 
+        </>
     )
 }
