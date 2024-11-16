@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { formatMonth } from '../FinanceCount/utils/monthFormatter';
-import { SummaryContainer, SummaryItem, MonthText, AmountText } from './IncomesSummaryStyles';
 import { selectIncomes } from '../../redux/selectors';
+import { formatMonth } from './utils/monthFormatter';
+import { SummaryContainer, SummaryItem, MonthText, AmountText } from './IncomesSummaryStyles';
+
 
 export const IncomesSummary = () => {
   const incomes = useSelector(selectIncomes);
