@@ -8,7 +8,7 @@ export const ExpensesSummary = () => {
   const spendings = useSelector(selectSpendings);
 
   const monthlyExpenses = spendings.reduce((acc, spending) => {
-    const month = spending.date.split('.')[1];
+    const month = spending.date.split('-')[1];
     acc[month] = (acc[month] || 0) + spending.sum;
     return acc;
   }, {});
