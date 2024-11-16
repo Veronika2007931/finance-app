@@ -25,7 +25,8 @@ export function RegPage(){
         const form = e.currentTarget
         const objUser = {
             email: e.currentTarget.elements.email.value,
-            password: e.currentTarget.elements.password.value,
+          password: e.currentTarget.elements.password.value,
+            name: e.currentTarget.elements.name.value,
         }
         
         if(e.currentTarget.elements.email.value === ''){

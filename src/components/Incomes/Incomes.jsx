@@ -14,14 +14,13 @@ export const Incomes = () => {
     return(
 
         <>
-             <Section>
+             {/* <Section>
             <FinanceToggle/>
             <Container>
                 <FinanceForm isSpendings={false} finAdd={addIncomes} categoryOptions={financesCategories.incomesCategories}/>
                 <FinanceHistory isSpendings={false} finanseList={financeList} delfunc={deleteIncomes}/>
-                {/* Тут має бути елемент зведення */}
             </Container>
-        </Section>
+        </Section> */}
 
         <section className={styles.incomes_section}>
             <div className={styles.container}>

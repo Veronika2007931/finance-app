@@ -57,7 +57,7 @@ export function Login(){
             </DefText> 
             <div>
               <LogInBtn type="submit">Увійти</LogInBtn>
-              <RegisterBtn to='/loginization'>Реєстрація</RegisterBtn>
+              <RegisterBtn to='/register'>Реєстрація</RegisterBtn>
             </div>
           </Form>
         </Backdrop>
