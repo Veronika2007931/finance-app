@@ -1,10 +1,21 @@
 import { useDispatch } from "react-redux"
 import { ClearBtn, DateInp, FinForm, SubBtn } from "./FinanceForm.styled"
 import { nanoid } from "nanoid"
+import { useState } from "react"
 
 export const FinanceForm = ({isSpendings, finAdd, categoryOptions}) => {
     const dispatch = useDispatch()
-    console.log(categoryOptions);
+    const [formData, dataChange] = useState({date:'',description:'',sum:''})
+    const handleClear = () => {
+        dataChange({date:'',description:'',sum:''})
+    }
+    const onHandleChange = (e) => {
+        e.preventDefault()
+        dataChange((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value,
+        }))
+    }
     const handleAdd = (e) => {
         e.preventDefault()
         const form = e.currentTarget
@@ -18,17 +29,18 @@ export const FinanceForm = ({isSpendings, finAdd, categoryOptions}) => {
         dispatch(finAdd(finItem))
         form.reset()
     }
+
     return(
         <FinForm onSubmit={handleAdd}>
-            <DateInp type="date" name="date"/>
-            <input type="text" name="description" placeholder={`Опис ${isSpendings?"товару":"продукту"}`}/>
+            <DateInp type="date" onChange={onHandleChange} value={formData.date} name="date"/>
+            <input type="text" onChange={onHandleChange} value={formData.description} name="description" placeholder={`Опис ${isSpendings?"товару":"продукту"}`}/>
             <select name="category" placeholder="">
                 {categoryOptions && categoryOptions.map(category=>{
                     return <option key={category.value} value={category.value}>{category.label}</option>
                 })}
             </select>
-            <input  type="number" name="sum" placeholder="0,00"/>
+            <input  type="number" onChange={onHandleChange} value={formData.sum} name="sum" placeholder="0,00"/>
             <SubBtn type="submit">ввести</SubBtn>
-            <ClearBtn type="button">очистити</ClearBtn>
+            <ClearBtn type="button" onClick={handleClear}>очистити</ClearBtn>
         </FinForm>
     )}
