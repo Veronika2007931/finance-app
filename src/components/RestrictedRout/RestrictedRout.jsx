@@ -7,5 +7,5 @@ import { LoginPage } from "Pages/LoginPage";
 
 export const RestrictedRout= ({element: Component, redirectTo = "/"})=>{
     const isLoggedIn = useSelector(selectAuth)
-    return isLoggedIn ? <LoginPage/> : <Navigate to={redirectTo}/>
+    return !isLoggedIn ? Component : <Navigate to={redirectTo}/>
 }
