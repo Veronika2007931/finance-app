@@ -3,11 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   spendings: [
     {id: '1', date:"02-02-2010", description:"paracetamol", category:"meds", sum:2233},
-    {id: '2', date:"23.08.2021", description:"cheeze", category:"food", sum:45}
+    {id: '2', date:"23-08-2021", description:"cheeze", category:"food", sum:45}
   ],
   incomes: [
     {id: '3' ,date:"05-01-2024", description:"kolyadka", category:"beggary", sum:500},
-    {id: '4', date:"31-06.-2047", description:"sallary", category:"job", sum:45000}
+    {id: '4', date:"31-06-2047", description:"sallary", category:"job", sum:45000}
   ]
 }
 
