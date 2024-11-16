@@ -9,7 +9,7 @@ export const IncomesSummary = () => {
   const incomes = useSelector(selectIncomes);
 
   const monthlyIncomes = incomes.reduce((acc, income) => {
-    const month = income.date.split('.')[1];
+    const month = income.date.split('-')[1];
     acc[month] = (acc[month] || 0) + income.sum;
     return acc;
   }, {});
