@@ -19,7 +19,7 @@ export const App = () => {
       <Routes>
         <Route path="/"  element={<HomePage/>}/>
         <Route index element={<RestrictedRout element={<LoginPage/>} redirectTo="/incomes"/>} />
-        <Route path="/register" element={<RegPage/>}/>
+        <Route path="/register" element={<RestrictedRout element={<RegPage/>} redirectTo="/incomes"/>}/>
         <Route path="/spendings" element={ <PrivatRout element={<SpendingsPage/>} redirectTo="/"/>} />
         <Route path="/incomes" element={<PrivatRout element={<IncomesPage/>} redirectTo="/"/>}/> 
         <Route path="/finance-flows" element={<FinanceFlow/>}/>
