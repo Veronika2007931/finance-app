@@ -8,6 +8,7 @@ import { deleteIncomes } from "../../redux/financesSlice"
 import { financesCategories } from "../../redux/constants"
 import { Container, Section } from "./Incomes.styled"
 import styles from './Incomes.module.css'
+import { IncomesSummary } from "components/FinanceCount/IncomesSummary"
 
 export const Incomes = () => {
     const financeList = useSelector(selectIncomes)
@@ -19,18 +20,9 @@ export const Incomes = () => {
             <Container>
                 <FinanceForm isSpendings={false} finAdd={addIncomes} categoryOptions={financesCategories.incomesCategories}/>
                 <FinanceHistory isSpendings={false} finanseList={financeList} delfunc={deleteIncomes}/>
+                <IncomesSummary/>
             </Container>
         </Section>
-
-        {/* <section className={styles.incomes_section}>
-            <div className={styles.container}>
-                <FinanceToggle/>
-                <div className={styles.actions_container}>
-                    <FinanceForm isSpendings={false} finAdd={addIncomes}/>
-                    <FinanceHistory isSpendings={false} finanseList={financeList} delfunc={deleteIncomes}/>
-                </div>
-            </div>
-        </section> */}
         </>
 
     )
