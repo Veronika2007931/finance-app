@@ -7,7 +7,6 @@ import { addIncomes } from "../../redux/financesSlice"
 import { deleteIncomes } from "../../redux/financesSlice"
 import { financesCategories } from "../../redux/constants"
 import { Container, Section } from "./Incomes.styled"
-import styles from './Incomes.module.css'
 import { IncomesSummary } from "components/FinanceCount/IncomesSummary"
 
 export const Incomes = () => {
