@@ -9,7 +9,7 @@ import { deleteSpendings } from "../../redux/financesSlice"
 import { financesCategories } from "../../redux/constants"
 import { Container, Section } from "components/Incomes/Incomes.styled"
 
-import styles from './Spendings.module.css'
+import { ExpensesSummary } from "components/FinanceCount/ExpensesSummary"
 
 
 export const Spendings = () => {
@@ -17,25 +17,14 @@ export const Spendings = () => {
     return(
 
         <>
-        {/* <Section>
+        <Section>
             <FinanceToggle/>
             <Container>
                 <FinanceForm isSpendings={true} finAdd={addSpendings} categoryOptions={financesCategories.spendingsCategories}/>
                 <FinanceHistory isSpendings={true}  finanseList={financeList} delfunc={deleteSpendings}/>
+                <ExpensesSummary/>
             </Container>
-        </Section> */}
-
-        <section className={styles.spendings_section}>
-            <div className={styles.container}>
-                <FinanceToggle/>
-                <div className={styles.actions_container}>
-                    <FinanceForm isSpendings={true} finAdd={addSpendings}/>
-                    <FinanceHistory isSpendings={true}  finanseList={financeList} delfunc={deleteSpendings}/>
-                    {/* Тут має бути елемент зведення */}
-                </div>
-            </div>
-        </section>
-
+        </Section>
         </>
     )
 }
