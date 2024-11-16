@@ -22,9 +22,7 @@ const financesSlice = createSlice({
       state.incomes.push(action.payload)
 
     },
-    deleteSpendings: (state, action) => state.spendings.filter(item => item.id !== action.payload),
-    deleteIncomes: (state, action) => state.incomes.filter(item => item.id !== action.payload)
-
+    
     },
     deleteSpendings: (state, action) => {
       state.spendings = state.spendings.filter(item => item.id !== action.payload)
