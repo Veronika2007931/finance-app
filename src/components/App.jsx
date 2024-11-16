@@ -8,8 +8,8 @@ import {IncomesPage} from "../Pages/IncomesPage"
 import {SpendingsPage} from "../Pages/SpendingsPage"
 import {FinanceFlow} from "../Pages/FinanceFlow"
 import { GlobalStyle } from "Styles/Global.styled";
-
 import { RestrictedRout } from "./RestrictedRout/RestrictedRout";
+import { PrivatRout } from "./RestrictedRout/PrivatRout";
 
 
 export const App = () => {
@@ -18,17 +18,15 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/"  element={<HomePage/>}/>
-
-        <Route  index element={<LoginPage/>}/>
-
+        <Route  index element={<LoginPage/>} />
         <Route  index element={<RegPage/>}/>
-        <Route path="/loginization" element={<RestrictedRout element={<LoginPage/>} redirectTo="incomes"/>}/>
-
-        <Route path="/spendings" element={<SpendingsPage/>}/>
+        <Route path="/register" element={<RegPage/>}/>
+        <Route path="/spendings" element={ <SpendingsPage/>} />
         <Route path="/incomes" element={<IncomesPage/>}/> 
         <Route path="/finance-flows" element={<FinanceFlow/>}/>
       </Routes> 
       <GlobalStyle/>
+
     </div>
   );
 }

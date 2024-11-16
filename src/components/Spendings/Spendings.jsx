@@ -16,14 +16,14 @@ export const Spendings = () => {
     const financeList = useSelector(selectSpendings) 
     return(
 
-        <Section>
+        <>
+        {/* <Section>
             <FinanceToggle/>
             <Container>
                 <FinanceForm isSpendings={true} finAdd={addSpendings} categoryOptions={financesCategories.spendingsCategories}/>
                 <FinanceHistory isSpendings={true}  finanseList={financeList} delfunc={deleteSpendings}/>
-                {/* Тут має бути елемент зведення */}
             </Container>
-        </Section>
+        </Section> */}
 
         <section className={styles.spendings_section}>
             <div className={styles.container}>
@@ -36,5 +36,6 @@ export const Spendings = () => {
             </div>
         </section>
 
+        </>
     )
 }
