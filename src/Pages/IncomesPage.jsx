@@ -1,5 +1,5 @@
-import Dashboard from "components/FinanceCount/Dashboard";
 import { UserBalance } from "components/FinanceCount/UserBalance";
+import { IncomesSummary } from "components/FinanceCount/IncomesSummary";
 import { Incomes } from "components/Incomes/Incomes";
 
 export function IncomesPage(){

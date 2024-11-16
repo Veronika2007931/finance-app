@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectSpendings } from '../redux/selectors';
-import { formatMonth } from '../utils/monthFormatter';
+import { selectSpendings } from '../../redux/selectors';
+import { formatMonth } from './utils/monthFormatter';
 import { SummaryContainer, SummaryItem, MonthText, AmountText } from './ExpensesSummaryStyles';
 
 export const ExpensesSummary = () => {
