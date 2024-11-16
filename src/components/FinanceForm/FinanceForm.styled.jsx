@@ -33,12 +33,7 @@ export const SubBtn = styled.button`
 export const ClearBtn = styled.button`
         background: none;
         color: ${({theme})=>theme.color.blackForButtOrTxtBlack};
-
-    background-color: #FF751D;
-    padding: 12px 35px 12px 35px;
-    color: white;
-    border-radius: 16px;
-    text-transform: uppercase;
-    border: 2px solid #FF751D;
+        padding: 12px 35px 12px 35px;
+        border-radius: 16px;
 `
 
