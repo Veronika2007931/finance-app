@@ -14,24 +14,23 @@ export const Incomes = () => {
     return(
 
         <>
-             {/* <Section>
+             <Section>
             <FinanceToggle/>
             <Container>
                 <FinanceForm isSpendings={false} finAdd={addIncomes} categoryOptions={financesCategories.incomesCategories}/>
                 <FinanceHistory isSpendings={false} finanseList={financeList} delfunc={deleteIncomes}/>
             </Container>
-        </Section> */}
+        </Section>
 
-        <section className={styles.incomes_section}>
+        {/* <section className={styles.incomes_section}>
             <div className={styles.container}>
                 <FinanceToggle/>
                 <div className={styles.actions_container}>
                     <FinanceForm isSpendings={false} finAdd={addIncomes}/>
                     <FinanceHistory isSpendings={false} finanseList={financeList} delfunc={deleteIncomes}/>
-                    {/* Тут має бути елемент зведення */}
                 </div>
             </div>
-        </section>
+        </section> */}
         </>
 
     )
