@@ -1,7 +1,7 @@
 import React from "react";
-import { BalanceContainer, BalanceAmount, NavigateButton } from "./UserBalance.styled";
+import { BalanceContainer, BalanceAmount, NavigateButton } from "./UserBalanceStyles";
 
-const UserBalance = ({ balance }) => {
+export const UserBalance = ({ balance }) => {
   return (
     <BalanceContainer>
       <BalanceAmount>Баланс: {balance.toFixed(2)} грн</BalanceAmount>
