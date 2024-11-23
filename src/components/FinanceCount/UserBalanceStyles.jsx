@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const BalanceContainer = styled.div`
@@ -19,7 +20,7 @@ export const BalanceAmount = styled.span`
   color: #333333;
 `;
 
-export const NavigateButton = styled.button`
+export const NavigateButton = styled(Link)`
   padding: 10px 15px;
   background-color: #ff751d;
   color: white;
