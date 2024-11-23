@@ -32,14 +32,14 @@ export const FinanceForm = ({isSpendings, finAdd, categoryOptions}) => {
 
     return(
         <FinForm onSubmit={handleAdd}>
-            <DateInp type="date" onChange={onHandleChange} value={formData.date} name="date"/>
-            <input type="text" onChange={onHandleChange} value={formData.description} name="description" placeholder={`Опис ${isSpendings?"товару":"продукту"}`}/>
+            <DateInp required type="date" onChange={onHandleChange} value={formData.date} name="date"/>
+            <input required type="text" onChange={onHandleChange} value={formData.description} name="description" placeholder={`Опис ${isSpendings?"товару":"продукту"}`}/>
             <select name="category" placeholder="">
                 {categoryOptions && categoryOptions.map(category=>{
                     return <option key={category.value} value={category.value}>{category.label}</option>
                 })}
             </select>
-            <input  type="number" onChange={onHandleChange} value={formData.sum} name="sum" placeholder="0,00"/>
+            <input required  type="number" onChange={onHandleChange} value={formData.sum} name="sum" placeholder="0,00"/>
             <SubBtn type="submit">ввести</SubBtn>
             <ClearBtn type="button" onClick={handleClear}>очистити</ClearBtn>
         </FinForm>

@@ -1,45 +1,35 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const BalanceContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #ffffff;
-  border: 2px solid #FF751D;
-  border-radius: 8px;
-  gap: 10px;
-  margin-top: 10px;
-
-  @media (min-width: 768px) {
-    margin-top: 20px;
-  }
-
-  @media (min-width: 1200px) {
-    grid-column: span 2;
-    justify-content: flex-start;
-  }
+  padding: 15px 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
 `;
 
-export const BalanceText = styled.span`
+export const BalanceAmount = styled.span`
   font-size: 18px;
-  color: #000;
-`;
-
-export const BalanceValue = styled.span`
-  font-size: 20px;
   font-weight: bold;
-  color: #000;
+  color: #333333;
 `;
 
-export const ConfirmButton = styled.button`
-  padding: 5px 10px;
-  background-color: #FF751D;
-  color: #ffffff;
+export const NavigateButton = styled.button`
+  padding: 10px 15px;
+  background-color: #ff751d;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
 
   &:hover {
-    background-color: #e06514;
+    background-color: #e66b1c;
   }
 `;

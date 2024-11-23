@@ -1,16 +1,15 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectBalance } from '../../redux/selectors';
-import { BalanceContainer, BalanceText, BalanceValue, ConfirmButton } from './UserBalanceStyles';
+import React from "react";
+import { BalanceContainer, BalanceAmount, NavigateButton } from "./UserBalanceStyles";
 
-export const UserBalance = () => {
-  const balance = useSelector(selectBalance);
-
+export const UserBalance = ({ balance }) => {
   return (
     <BalanceContainer>
-      <BalanceText>Баланс:</BalanceText>
-      <BalanceValue>{balance} UAH</BalanceValue>
-      <ConfirmButton>Підтвердити</ConfirmButton>
+      <BalanceAmount>Баланс: {balance.toFixed(2)} грн</BalanceAmount>
+      <NavigateButton onClick={() => (window.location.href = "/finance-flows")}>
+        Перейти до розрахунків
+      </NavigateButton>
     </BalanceContainer>
   );
 };
+
+export default UserBalance;
