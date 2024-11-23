@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectIncomes } from '../../redux/selectors';
 import { formatMonth } from './utils/monthFormatter';
-import { SummaryContainer, SummaryItem, MonthText, AmountText } from './IncomesSummaryStyles';
+import { SummaryContainer, MonthSum, MonthName, SummaryTitle, MonthRow } from './IncomesSummaryStyles';
 
 
 export const IncomesSummary = () => {
@@ -16,12 +16,12 @@ export const IncomesSummary = () => {
 
   return (
     <SummaryContainer>
-      <h2>Зведення по доходам</h2>
+      <SummaryTitle>Зведення по доходам</SummaryTitle>
       {Object.entries(monthlyIncomes).map(([month, total], index) => (
-        <SummaryItem key={index}>
-          <MonthText>{formatMonth(month)}</MonthText>
-          <AmountText>{total} грн</AmountText>
-        </SummaryItem>
+        <MonthRow key={index}>
+          <MonthName>{formatMonth(month)}</MonthName>
+          <MonthSum>{total} грн</MonthSum>
+        </MonthRow>
       ))}
     </SummaryContainer>
   );
