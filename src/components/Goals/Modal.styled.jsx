@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const Modal=styled.div`
+  background:white;
   width: 500px;
   height: 400px;
-  border-radius: 70px 0px;
+  border-radius: 70px 70px;
   background-color: white;
   padding: 30px;
 `
@@ -12,9 +13,13 @@ export const Backdrop=styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  box-sizing: unset;
   width: 100%;
   height: 100%;
-  padding: 15px;
+  padding-left: 350px;
+  padding-top:15px;
+  padding-right:15px;
+  padding-bottom:15px;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -31,7 +36,7 @@ export const Butt=styled.button`
     color: #fff;
     height: 45px;
     width: 150px;
-    background: orange;
+    background-color: #ff751d;
     border: none;
     border-radius: 20px;
     margin-left: 36px;
@@ -45,12 +50,23 @@ export const Butt1=styled.button`
     border-radius: 20px;
     font-family: Montserrat Alternates;
 `
+export const Butt2=styled.button`
+    color: #fff;
+    margin-left: 440px;
+    background: orange;
+    border: none;
+    border-radius: 20px;
+    font-family: Montserrat Alternates;
+`
+
 export const Text=styled.h2`
     font-family: Roboto;
     transition: all .15s linear;
 `
 export const Input=styled.input`
-  margin-right:15px;
-  border-radius: 10px;
+    margin-right:15px;
+    border-radius: 10px;
 `
-
+export const Diva=styled.div`
+    padding-left: 40px;
+`
