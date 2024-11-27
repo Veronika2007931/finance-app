@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Backdrop, Modal, Butt, Butt1, Text, Input } from './Modal.styled.jsx';
+import { Backdrop, Modal, Butt, Butt1, Text, Input,Diva,Butt2 } from './Modal.styled';
 import { useSelector } from 'react-redux';
 import { selectBalance } from '../../redux/selectors.js';
 export function Goals() {
@@ -12,6 +12,9 @@ export function Goals() {
     const click=()=>{
         const mas=[input.current.value,parseFloat(inv.current.value)||0]
         nnchange([...nn,mas])
+        console.log(nn);
+        input.current.value=''
+        inv.current.value=''    
     }
     const changeBackdrop=()=>{
         backdropchange(!backdrop)
@@ -21,29 +24,31 @@ export function Goals() {
     }
     return(
         <div>
-        <Butt onClick={changeBackdrop}>OP</Butt>
+        <Butt onClick={changeBackdrop}>Цілі</Butt>
         <Backdrop className={backdrop ? '':'is-hidden'}>
         <Modal>
-        <Butt1 onClick={changeBackdrop} data-action="close-modal">X</Butt1>
+        <Diva>
+        <Butt2 onClick={changeBackdrop} data-action="close-modal">X</Butt2>
         <div>
-        <Input type="text" ref={input} placeholder="Aim" />
-        <Input type="number" ref={inv} placeholder="Sum" />
-        <Butt1 onClick={click}>Add aim</Butt1>
+        <Input type="text" ref={input} placeholder="Ціль" />
+        <Input type="number" ref={inv} placeholder="Сума" />
+        <Butt1 onClick={click}>Додати ціль</Butt1>
         </div>
-        <Text>Aims</Text>
-        <ul>
+        </Diva>
+        <Text>Цілі</Text>
+        <ul style={{listStyle:'unset'}}>
         {nn.map((item,index)=>(
         <li key={index} onClick={()=>selectAimButt(index)} style={{cursor:'pointer'}}>
-        <>Aim:</>{item[0]} <>Money:</>{item[1]}
+        <strong>Ціль: </strong>{item[0]}, <strong>Гроші: </strong>{item[1]}
         </li>
         ))}
         </ul>
         {selectedAimin!==null && (
         <div style={{marginTop: '20px'}}>
-        <Text>Aim:{nn[selectedAimin][0]}</Text>
-        <Text>Percent:</Text>
-        <input type="range" min="0" max="100" step="1" value={nn[selectedAimin][1]} readOnly style={{width:'100%'}}/>
-        <p>Meaning:<>{balance}%</></p>
+        <Text>Ціль:{nn[selectedAimin][0]}</Text>
+        <Text>Відсоток:</Text>
+        <input type="range" min="0" max="100" step="1" value={Math.round(100/balance*nn[selectedAimin][1])} readOnly style={{width:'100%'}}/>
+        <p>Відсоткове співвідношення:<>{Math.round(100/balance*nn[selectedAimin][1])}%</></p>
         </div>
         )}
         </Modal>

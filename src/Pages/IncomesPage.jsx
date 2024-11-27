@@ -5,9 +5,9 @@ import { Incomes } from "components/Incomes/Incomes";
 export function IncomesPage(){
     return(
         <div>
-           <Goals/> 
         <UserBalance/>
         <Incomes/>
+        <Goals/> 
         </div>
     )
     }
