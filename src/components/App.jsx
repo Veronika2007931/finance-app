@@ -22,7 +22,7 @@ export const App = () => {
         <Route path="/register" element={<RestrictedRout element={<RegPage/>} redirectTo="/incomes" />}/>
         <Route path="/spendings" element={ <PrivatRout element={<SpendingsPage/>} redirectTo="/"/>}/>
         <Route path="/incomes" element={<PrivatRout element={<IncomesPage/>} redirectTo="/"/>}/> 
-        <Route path="/finance-flows" element={<FinanceFlow/>}/>
+        <Route path="/finance-flows" element={<PrivatRout element={<FinanceFlow/>} redirectTo="/"/>}/>
       </Routes> 
       <GlobalStyle/>
 

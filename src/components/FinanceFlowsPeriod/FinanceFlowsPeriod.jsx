@@ -12,7 +12,7 @@ function formatDate(dateStr) {
       'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'
     ];
     
-    const [month, year] = dateStr.split('-');
+    const [year, month] = dateStr.split('-');
     const monthName = months[parseInt(month) - 1];
     
     return `${monthName} ${year}`;
@@ -23,24 +23,25 @@ export const FinanceFlowsPeriod = () => {
     const filter = useSelector(selectFilters)
     const activePeriod = formatDate(filter.dateRange)
     const currentPeriod = getCurrentDate()
-
+    console.log(filter.dateRange);
     const handleIncreaseDateRange = () => {
-        const [month, year] = filter.dateRange.split('-');
+        const [year, month] = filter.dateRange.split('-');
         const paddedMonth = (Number(month) + 1).toString().padStart(2, '0')
         if (Number(paddedMonth) > 12) {
-            dispatch(setDateRange(`1.${Number(year) + 1}`))
+            dispatch(setDateRange(`${Number(year) + 1}-01`))
         } else {
-            dispatch(setDateRange(`${paddedMonth}-${year}`))
+            dispatch(setDateRange(`${year}-${paddedMonth}`))
         }
+        
     }
 
     const handleDecreaseDateRange = () => {
-        const [month, year] = filter.dateRange.split('-');
+        const [year, month] = filter.dateRange.split('-');
         const paddedMonth = (Number(month) - 1).toString().padStart(2, '0')
         if (Number(paddedMonth) < 1) {
-            dispatch(setDateRange(`12.${Number(year) - 1}`))
+            dispatch(setDateRange(`${Number(year) - 1}-12`))
         } else {
-            dispatch(setDateRange(`${paddedMonth}-${year}`))
+            dispatch(setDateRange(`${year}-${paddedMonth}`))
         }
     }
 

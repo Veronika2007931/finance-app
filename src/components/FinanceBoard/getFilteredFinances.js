@@ -1,7 +1,7 @@
 export const getSplitedDate = (date) => { 
-    const [day, month, year] = date.split('-');
+    const [year, month, day] = date.split('-');
 
-    return `${month}-${year}`
+    return `${year}-${month}`
 }
 
 
