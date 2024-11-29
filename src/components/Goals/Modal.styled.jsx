@@ -7,6 +7,9 @@ export const Modal=styled.div`
   border-radius: 70px 70px;
   background-color: white;
   padding: 30px;
+    transform: scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 `
 
 export const Backdrop=styled.div`
@@ -42,6 +45,7 @@ export const Butt=styled.button`
     margin-left: 36px;
     padding: 10px;
     font-family: Montserrat Alternates;
+    cursor:pointer;
 `
 export const Butt1=styled.button`
     color: #fff;
@@ -49,9 +53,11 @@ export const Butt1=styled.button`
     border: none;
     border-radius: 20px;
     font-family: Montserrat Alternates;
+    cursor:pointer;
 `
 export const Butt2=styled.button`
     color: #fff;
+    cursor:pointer;
     margin-left: 440px;
     background: orange;
     border: none;

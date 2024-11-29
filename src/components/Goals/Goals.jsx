@@ -20,6 +20,8 @@ export function Goals() {
         backdropchange(!backdrop)
     }
     const selectAimButt=(index)=>{
+        console.log(balance,100/balance*nn[0][1],nn[0][1]);
+        
         selectedAiminchange(index);
     }
     return(
@@ -47,8 +49,8 @@ export function Goals() {
         <div style={{marginTop: '20px'}}>
         <Text>Ціль:{nn[selectedAimin][0]}</Text>
         <Text>Відсоток:</Text>
-        <input type="range" min="0" max="100" step="1" value={Math.round(100/balance*nn[selectedAimin][1])} readOnly style={{width:'100%'}}/>
-        <p>Відсоткове співвідношення:<>{Math.round(100/balance*nn[selectedAimin][1])}%</></p>
+        <input type="range" min="0" max="100" step="1" value={Math.ceil(100/balance*nn[selectedAimin][1])} readOnly style={{width:'100%'}}/>
+        <p>Відсоткове співвідношення:<>{Math.ceil(100/balance*nn[selectedAimin][1])>100?'100':Math.ceil(100/balance*nn[selectedAimin][1])}%</></p>
         </div>
         )}
         </Modal>
