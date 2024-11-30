@@ -9,9 +9,10 @@ export const BalanceContainer = styled.div`
   background: #ffffff;
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  margin-bottom: 30px;
+  /* width: 100%;
   max-width: 1060px;
-  margin: 0 auto;
+  margin: 0 auto; */
 `;
 
 export const BalanceAmount = styled.span`

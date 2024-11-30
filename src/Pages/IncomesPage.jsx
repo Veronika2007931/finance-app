@@ -1,13 +1,14 @@
 import { UserBalance } from "components/FinanceCount/UserBalance";
 import { Goals } from "components/Goals/Goals";
 import { Incomes } from "components/Incomes/Incomes";
+import { Container } from "components/UserMenu/UserMenu.styled";
 
 export function IncomesPage(){
     return(
-        <div>
+        <Container>
         <UserBalance/>
         <Incomes/>
         <Goals/> 
-        </div>
+        </Container>
     )
     }

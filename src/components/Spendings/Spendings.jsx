@@ -18,12 +18,14 @@ export const Spendings = () => {
 
         <>
         <Section>
-            <FinanceToggle/>
-            <Container>
+            
+                <Container>
+                    <FinanceToggle/>
                 <FinanceForm isSpendings={true} finAdd={addSpendings} categoryOptions={financesCategories.spendingsCategories}/>
                 <FinanceHistory isSpendings={true}  finanseList={financeList} delfunc={deleteSpendings}/>
+                
+                </Container>
                 <ExpensesSummary/>
-            </Container>
         </Section>
         </>
     )
