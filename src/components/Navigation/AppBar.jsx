@@ -11,16 +11,13 @@ export const AppBar= ()=>{
   const isLoggedIn = useSelector(selectAuth)
   //  const [isLoggedIn, setIsLoggedIn] = useState(true)
    console.log(Logo)
-return(
-   
- <>
- 
+return(   
+ <> 
   <Header>
     <Logo src={logo} alt="logo"/>
    
   <HeaderText>INVESTIQ</HeaderText>
-    {isLoggedIn && <UserMenu/> }
-     
+    {isLoggedIn && <UserMenu/> }     
 </Header>
   <Outlet/>
 </>

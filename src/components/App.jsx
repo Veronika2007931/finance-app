@@ -10,12 +10,14 @@ import {FinanceFlow} from "../Pages/FinanceFlow"
 import { GlobalStyle } from "Styles/Global.styled";
 import { RestrictedRout } from "./RestrictedRout/RestrictedRout";
 import { PrivatRout } from "./RestrictedRout/PrivatRout";
+import { AppBar } from "./Navigation/AppBar";
 
 
 export const App = () => {
 
   return (
-    <div>
+    <div style={{ background: 'rgba(242, 245, 252, 1)', width: '100%' }}>
+      <AppBar/>
       <Routes>
         <Route path="/"  element={<HomePage/>}/>
         <Route  index element =  {<RestrictedRout element={<LoginPage/>} redirectTo="/incomes" />}/>

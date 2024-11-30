@@ -7,10 +7,10 @@ import { logout } from "../../redux/authSlice"
 export function UserMenu(){
     const user = useSelector(selectUser)
    const dispatch = useDispatch()
-    
+    console.log(user);
     return(
         <UMDiv>
-         <PhotoDiv>{user && user.name.slice(0,1) }</PhotoDiv>
+         <PhotoDiv>{user.name?.slice(0,1)}</PhotoDiv>
         <UserNameText> {user ? user.name : "Hello"} </UserNameText>
         <UserNameEl>|</UserNameEl>
         <ExitBtn onClick={()=>{

@@ -8,5 +8,6 @@ export const Container = styled.div`
 `
 export const Section = styled.section`
     background: rgba(242, 245, 252, 1);
-    width: max-content;
+    display: flex;
+    /* width: max-content; */
 `
