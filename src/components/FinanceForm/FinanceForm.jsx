@@ -23,7 +23,7 @@ export const FinanceForm = ({isSpendings, finAdd, categoryOptions}) => {
             date: form.elements.date.value,
             description:form.elements.description.value,
             category:form.elements.category.value,
-            sum:form.elements.sum.value,
+            sum:Number(form.elements.sum.value),
             id:nanoid()
         }
         dispatch(finAdd(finItem))
