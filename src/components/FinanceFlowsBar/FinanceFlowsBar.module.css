@@ -48,11 +48,11 @@
 
 @media screen and (max-width: 768px) {
   .finance_flows_bar {
-
+    height: 80px;
     padding-block: 30px;
   }
   .container {
-    padding-block: 20px;
+    height: 80px;
     border-radius: 20px;
   }
   .container > div {

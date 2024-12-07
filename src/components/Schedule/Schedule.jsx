@@ -11,9 +11,10 @@ Chart.register(CategoryScale, ChartDataLabels );
 
 export const Schedule = ({data}) => {
   
+  
   useEffect(() => {
     setChartData({
-      labels: data.map((financeFlow) => financeFlow.desciption),
+      labels: data.map((financeFlow) => financeFlow.description),
       datasets: [
         {
           label: data.map((financeFlow) => financeFlow.item),
@@ -39,7 +40,7 @@ export const Schedule = ({data}) => {
   }, [])
     
   const [chartData, setChartData] = useState({
-      labels: data.map((financeFlow) => financeFlow.desciption),
+      labels: data.map((financeFlow) => financeFlow.description),
       datasets: [
         {
           label: data.map((financeFlow) => financeFlow.item),
@@ -54,6 +55,9 @@ export const Schedule = ({data}) => {
         },
       ],
   })
+
+  console.log(data.map((financeFlow) => financeFlow.description));
+  
   
 
   const options = {
